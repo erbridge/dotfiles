@@ -1,0 +1,9 @@
+[user]
+	email = f@erbridge.co.uk
+	name = erbridge
+
+[transfer]
+	fsckobjects = true
+
+[include]
+	path = ~/.gitconfig.local
