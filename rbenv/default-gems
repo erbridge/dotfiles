@@ -1,0 +1,7 @@
+bundler
+rails
+
+# Probably should install from a tarball: http://www.eigenclass.org/hiki/fastri/
+fastri
+rcodetools
+rubocop

@@ -48,6 +48,9 @@ fi
 source "$ZGEN_CLONE_DIR/zgen.zsh"
 
 if ! zgen saved; then
+    # oh-my-zsh plugins
+    zgen oh-my-zsh plugins/rails
+
     # zsh-users plugins
     zgen load zsh-users/zsh-autosuggestions
     zgen load zsh-users/zsh-completions
@@ -79,4 +82,11 @@ fi
 
 if which rbenv > /dev/null 2>&1; then
     eval "$(rbenv init -)"
+
+    RBENV_PLUGIN_DIR="$(rbenv root)/plugins"
+    RBENV_DEFAULT_GEMS_DIR="$RBENV_PLUGIN_DIR/rbenv-default-gems"
+
+    if [[ ! -d $RBENV_DEFAULT_GEMS_DIR ]]; then
+      git clone git@github.com:rbenv/rbenv-default-gems.git $RBENV_DEFAULT_GEMS_DIR
+    fi
 fi
