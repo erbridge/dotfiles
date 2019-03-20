@@ -4,7 +4,11 @@
 
 ### `home`
 
-All files belong in `$HOME` with the same name.
+All files belong in `$HOME` with the same paths.
+
+### `powerline`
+
+All files belong in `$HOME/.config/powerline` with the same paths.
 
 ### `rbenv`
 
