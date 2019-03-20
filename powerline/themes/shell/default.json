@@ -10,5 +10,13 @@
         "priority": 40
       }
     ]
+  },
+  "segment_data": {
+    "cwd": {
+      "args": {
+        "dir_shorten_len": 20,
+        "dir_limit_depth": 2
+      }
+    }
   }
 }
