@@ -49,6 +49,7 @@ source "$ZGEN_CLONE_DIR/zgen.zsh"
 
 if ! zgen saved; then
     # oh-my-zsh plugins
+    zgen oh-my-zsh plugins/autojump
     zgen oh-my-zsh plugins/rails
 
     # zsh-users plugins
@@ -74,10 +75,6 @@ if which pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; the
   if [[ -f $POWERLINE_PATH ]]; then
     source "$POWERLINE_PATH"
   fi
-fi
-
-if [[ -f /usr/local/etc/profile.d/autojump.sh ]]; then
-    source /usr/local/etc/profile.d/autojump.sh
 fi
 
 if which rbenv > /dev/null 2>&1; then
