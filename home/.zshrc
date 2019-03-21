@@ -19,7 +19,6 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=999999999
 SAVEHIST=$HISTSIZE
-setopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # Run again with:
@@ -51,6 +50,7 @@ if ! zgen saved; then
   # oh-my-zsh plugins
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/rails
+  zgen oh-my-zsh plugins/sudo
 
   # zsh-users plugins
   zgen load zsh-users/zsh-autosuggestions
@@ -87,3 +87,26 @@ if which rbenv > /dev/null 2>&1; then
     git clone git@github.com:rbenv/rbenv-default-gems.git $RBENV_DEFAULT_GEMS_DIR
   fi
 fi
+
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+
+alias 1='cd -'
+alias 2='cd -2'
+alias 3='cd -3'
+alias 4='cd -4'
+alias 5='cd -5'
+alias 6='cd -6'
+alias 7='cd -7'
+alias 8='cd -8'
+alias 9='cd -9'
+
+function take() {
+  mkdir -p $@ && cd ${@:$#}
+}
