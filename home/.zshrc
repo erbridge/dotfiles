@@ -48,22 +48,22 @@ fi
 source "$ZGEN_CLONE_DIR/zgen.zsh"
 
 if ! zgen saved; then
-    # oh-my-zsh plugins
-    zgen oh-my-zsh plugins/autojump
-    zgen oh-my-zsh plugins/rails
+  # oh-my-zsh plugins
+  zgen oh-my-zsh plugins/autojump
+  zgen oh-my-zsh plugins/rails
 
-    # zsh-users plugins
-    zgen load zsh-users/zsh-autosuggestions
-    zgen load zsh-users/zsh-completions
-    zgen load zsh-users/zsh-history-substring-search
-    zgen load zsh-users/zsh-syntax-highlighting
+  # zsh-users plugins
+  zgen load zsh-users/zsh-autosuggestions
+  zgen load zsh-users/zsh-completions
+  zgen load zsh-users/zsh-history-substring-search
+  zgen load zsh-users/zsh-syntax-highlighting
 
-    # Other plugins
-    zgen load djui/alias-tips
-    zgen load RobSis/zsh-completion-generator
-    zgen load unixorn/autoupdate-zgen
+  # Other plugins
+  zgen load djui/alias-tips
+  zgen load RobSis/zsh-completion-generator
+  zgen load unixorn/autoupdate-zgen
 
-    zgen save
+  zgen save
 fi
 
 if which pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; then
@@ -78,12 +78,12 @@ if which pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; the
 fi
 
 if which rbenv > /dev/null 2>&1; then
-    eval "$(rbenv init -)"
+  eval "$(rbenv init -)"
 
-    RBENV_PLUGIN_DIR="$(rbenv root)/plugins"
-    RBENV_DEFAULT_GEMS_DIR="$RBENV_PLUGIN_DIR/rbenv-default-gems"
+  RBENV_PLUGIN_DIR="$(rbenv root)/plugins"
+  RBENV_DEFAULT_GEMS_DIR="$RBENV_PLUGIN_DIR/rbenv-default-gems"
 
-    if [[ ! -d $RBENV_DEFAULT_GEMS_DIR ]]; then
-      git clone git@github.com:rbenv/rbenv-default-gems.git $RBENV_DEFAULT_GEMS_DIR
-    fi
+  if [[ ! -d $RBENV_DEFAULT_GEMS_DIR ]]; then
+    git clone git@github.com:rbenv/rbenv-default-gems.git $RBENV_DEFAULT_GEMS_DIR
+  fi
 fi
