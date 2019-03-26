@@ -1,9 +1,12 @@
-[user]
-	email = f@erbridge.co.uk
-	name = erbridge
+[core]
+	excludesfile = ~/.gitignore
 
 [transfer]
 	fsckobjects = true
+
+[user]
+	email = f@erbridge.co.uk
+	name = erbridge
 
 [include]
 	path = ~/.gitconfig.local
