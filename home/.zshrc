@@ -77,6 +77,10 @@ if which pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; the
   fi
 fi
 
+if which direnv > /dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
+
 if which rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 
