@@ -2,6 +2,9 @@
 	editor = nano -r 72
 	excludesfile = ~/.gitignore
 
+[rebase]
+	autosquash = true
+
 [transfer]
 	fsckobjects = true
 
