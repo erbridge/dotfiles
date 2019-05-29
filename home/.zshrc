@@ -69,8 +69,8 @@ if ! zgen saved; then
   # zsh-users plugins
   zgen load zsh-users/zsh-autosuggestions
   zgen load zsh-users/zsh-completions
+  zgen load zsh-users/zsh-syntax-highlighting # Must be sourced before zsh-history-substring-search
   zgen load zsh-users/zsh-history-substring-search
-  zgen load zsh-users/zsh-syntax-highlighting
 
   # Other plugins
   zgen load djui/alias-tips
@@ -79,6 +79,10 @@ if ! zgen saved; then
 
   zgen save
 fi
+
+# zsh-history-substring-search key bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 if [[ -v ITERM_SESSION_ID ]]; then
   ITERM_INTEGRATION_PATH="$HOME/.iterm2_shell_integration.zsh"
