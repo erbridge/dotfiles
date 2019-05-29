@@ -25,6 +25,13 @@ zstyle :compinstall filename "$HOME/.zshrc"
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
+
+# History
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
 setopt share_history
 
 autoload -Uz compinit
