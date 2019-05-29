@@ -1,5 +1,9 @@
 # shellcheck disable=SC2148
 
+if command -v brew > /dev/null 2>&1; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored
