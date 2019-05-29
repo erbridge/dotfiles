@@ -86,7 +86,6 @@ if ! zgen saved; then
   # oh-my-zsh plugins
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/iterm2
-  zgen oh-my-zsh plugins/rails
   zgen oh-my-zsh plugins/sudo
 
   # zsh-users plugins
