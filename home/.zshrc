@@ -1,3 +1,5 @@
+# shellcheck disable=SC2148
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored
@@ -9,15 +11,16 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' original false
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' substitute 1
-zstyle :compinstall filename '~/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE="$HOME/.histfile"
 HISTSIZE=999999999
+# shellcheck disable=SC2034
 SAVEHIST=$HISTSIZE
 bindkey -e
 # End of lines configured by zsh-newuser-install
@@ -28,23 +31,29 @@ bindkey -e
 export EDITOR=nano
 
 # zsh-syntax-highlighting settings
+# shellcheck disable=SC2034
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # zgen settings
+# shellcheck disable=SC2034
 ZGEN_RESET_ON_CHANGE="$HOME/.zshrc"
 
 # autoupdate-zgen settings
+# shellcheck disable=SC2034
 ZGEN_PLUGIN_UPDATE_DAYS=7
+# shellcheck disable=SC2034
 ZGEN_SYSTEM_UPDATE_DAYS=7
 
 # Setup zgen
 ZGEN_CLONE_DIR="$HOME/zgen"
+ZGEN_SCRIPT_PATH="$ZGEN_CLONE_DIR/zgen.zsh"
 
-if [[ ! -f $ZGEN_CLONE_DIR/zgen.zsh ]]; then
-    git clone git@github.com:tarjoilija/zgen.git $ZGEN_CLONE_DIR
+if [[ ! -f $ZGEN_SCRIPT_PATH ]]; then
+  git clone git@github.com:tarjoilija/zgen.git "$ZGEN_CLONE_DIR"
 fi
 
-source "$ZGEN_CLONE_DIR/zgen.zsh"
+# shellcheck source=/dev/null
+source "$ZGEN_SCRIPT_PATH"
 
 if ! zgen saved; then
   # oh-my-zsh plugins
@@ -66,29 +75,30 @@ if ! zgen saved; then
   zgen save
 fi
 
-if which pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; then
+if command -v pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; then
   powerline-daemon -q
 
   POWERLINE_ROOT="$(pip show powerline-status | grep Location | sed 's/Location: //')/powerline"
   POWERLINE_PATH="$POWERLINE_ROOT/bindings/zsh/powerline.zsh"
 
   if [[ -f $POWERLINE_PATH ]]; then
+    # shellcheck source=/dev/null
     source "$POWERLINE_PATH"
   fi
 fi
 
-if which direnv > /dev/null 2>&1; then
+if command -v direnv > /dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
-if which rbenv > /dev/null 2>&1; then
+if command -v rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 
   RBENV_PLUGIN_DIR="$(rbenv root)/plugins"
   RBENV_DEFAULT_GEMS_DIR="$RBENV_PLUGIN_DIR/rbenv-default-gems"
 
   if [[ ! -d $RBENV_DEFAULT_GEMS_DIR ]]; then
-    git clone git@github.com:rbenv/rbenv-default-gems.git $RBENV_DEFAULT_GEMS_DIR
+    git clone git@github.com:rbenv/rbenv-default-gems.git "$RBENV_DEFAULT_GEMS_DIR"
   fi
 fi
 
@@ -112,5 +122,5 @@ alias 8='cd -8'
 alias 9='cd -9'
 
 function take() {
-  mkdir -p $@ && cd ${@:$#}
+  mkdir -p "$@" && cd "${@:$#}" || exit 1
 }
