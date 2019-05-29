@@ -1,4 +1,5 @@
 [core]
+	editor = nano -r 72
 	excludesfile = ~/.gitignore
 
 [transfer]
