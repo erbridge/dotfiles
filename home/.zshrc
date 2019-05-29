@@ -122,6 +122,10 @@ if command -v rbenv > /dev/null 2>&1; then
   fi
 fi
 
+if command -v hub > /dev/null 2>&1; then
+  eval "$(hub alias -s)"
+fi
+
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
