@@ -150,3 +150,5 @@ alias 9='cd -9'
 function take() {
   mkdir -p "$@" && cd "${@:$#}" || exit 1
 }
+
+setopt share_history
