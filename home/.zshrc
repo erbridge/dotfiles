@@ -1,10 +1,15 @@
 # shellcheck disable=SC2148
 
+#
+# ZSH Setup
+#
+
+# Uncomment to enable profiling zsh startup time with zprof
+# zmodload zsh/zprof
+
 if command -v brew > /dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
-
-# The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle ':completion:*' completions 1
@@ -17,22 +22,23 @@ zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p
 zstyle ':completion:*' substitute 1
 zstyle :compinstall filename "$HOME/.zshrc"
 
+setopt auto_pushd
+setopt pushd_ignore_dups
+setopt pushdminus
+setopt share_history
+
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
-# Lines configured by zsh-newuser-install
+#
+# Configuration Variables
+#
+
 HISTFILE="$HOME/.histfile"
+
 HISTSIZE=999999999
 # shellcheck disable=SC2034
 SAVEHIST=$HISTSIZE
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# Run again with:
-# autoload -Uz zsh-newuser-install
-# zsh-newuser-install -f
-
-export EDITOR=nano
 
 # zsh-syntax-highlighting settings
 # shellcheck disable=SC2034
@@ -47,6 +53,16 @@ ZGEN_RESET_ON_CHANGE="$HOME/.zshrc"
 ZGEN_PLUGIN_UPDATE_DAYS=7
 # shellcheck disable=SC2034
 ZGEN_SYSTEM_UPDATE_DAYS=7
+
+#
+# Variables
+#
+
+export EDITOR=nano
+
+#
+# Plugins
+#
 
 # Setup zgen
 ZGEN_CLONE_DIR="$HOME/zgen"
@@ -80,10 +96,6 @@ if ! zgen saved; then
   zgen save
 fi
 
-# zsh-history-substring-search key bindings
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 if [[ -v ITERM_SESSION_ID ]]; then
   ITERM_INTEGRATION_PATH="$HOME/.iterm2_shell_integration.zsh"
 
@@ -93,18 +105,6 @@ if [[ -v ITERM_SESSION_ID ]]; then
 
   # shellcheck source=/dev/null
   source "$ITERM_INTEGRATION_PATH"
-fi
-
-if command -v pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; then
-  powerline-daemon -q
-
-  POWERLINE_ROOT="$(pip show powerline-status | grep Location | sed 's/Location: //')/powerline"
-  POWERLINE_PATH="$POWERLINE_ROOT/bindings/zsh/powerline.zsh"
-
-  if [[ -f $POWERLINE_PATH ]]; then
-    # shellcheck source=/dev/null
-    source "$POWERLINE_PATH"
-  fi
 fi
 
 if command -v direnv > /dev/null 2>&1; then
@@ -122,15 +122,25 @@ if command -v rbenv > /dev/null 2>&1; then
   fi
 fi
 
-if command -v hub > /dev/null 2>&1; then
-  eval "$(hub alias -s)"
+#
+# Prompt
+#
+
+if command -v pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; then
+  powerline-daemon -q
+
+  POWERLINE_ROOT="$(pip show powerline-status | grep Location | sed 's/Location: //')/powerline"
+  POWERLINE_PATH="$POWERLINE_ROOT/bindings/zsh/powerline.zsh"
+
+  if [[ -f $POWERLINE_PATH ]]; then
+    # shellcheck source=/dev/null
+    source "$POWERLINE_PATH"
+  fi
 fi
 
-export PATH="$HOME/bin:$PATH"
-
-setopt auto_pushd
-setopt pushd_ignore_dups
-setopt pushdminus
+#
+# Aliases and Functions
+#
 
 alias -g ...='../..'
 alias -g ....='../../..'
@@ -147,8 +157,26 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
+if command -v hub > /dev/null 2>&1; then
+  alias git=hub
+fi
+
 function take() {
   mkdir -p "$@" && cd "${@:$#}" || exit 1
 }
 
-setopt share_history
+#
+# Keybindings
+#
+
+bindkey -e
+
+# zsh-history-substring-search key bindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+#
+# Finishing Touches
+#
+
+export PATH="$HOME/bin:$PATH"
