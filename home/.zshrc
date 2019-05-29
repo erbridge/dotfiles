@@ -62,6 +62,7 @@ source "$ZGEN_SCRIPT_PATH"
 if ! zgen saved; then
   # oh-my-zsh plugins
   zgen oh-my-zsh plugins/autojump
+  zgen oh-my-zsh plugins/iterm2
   zgen oh-my-zsh plugins/rails
   zgen oh-my-zsh plugins/sudo
 
@@ -77,6 +78,17 @@ if ! zgen saved; then
   zgen load unixorn/autoupdate-zgen
 
   zgen save
+fi
+
+if [[ -v ITERM_SESSION_ID ]]; then
+  ITERM_INTEGRATION_PATH="$HOME/.iterm2_shell_integration.zsh"
+
+  if [[ ! -f $ITERM_INTEGRATION_PATH ]]; then
+    curl -L https://iterm2.com/shell_integration/zsh -o "$ITERM_INTEGRATION_PATH"
+  fi
+
+  # shellcheck source=/dev/null
+  source "$ITERM_INTEGRATION_PATH"
 fi
 
 if command -v pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; then
