@@ -1,3 +1,6 @@
+[alias]
+	forcepush = push --force-with-lease
+
 [core]
 	editor = nano -r 72
 	excludesfile = ~/.gitignore
