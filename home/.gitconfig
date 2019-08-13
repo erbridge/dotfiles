@@ -4,6 +4,7 @@
 [core]
 	editor = nano -r 72
 	excludesfile = ~/.gitignore
+	hooksPath = ~/.githooks
 
 [rebase]
 	autosquash = true
