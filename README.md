@@ -1,23 +1,34 @@
 # dotfiles
 
-## Locations
+## Install
 
-### `home`
+### Automated Installation
+
+Run the install script after checking out this repository to automatically
+create symlinks.
+
+```sh
+$ ./install.sh
+```
+
+### Manual File Locations
+
+#### `home`
 
 All files belong in `$HOME` with the same paths.
 
-### `powerline`
+#### `powerline`
 
 All files belong in `$HOME/.config/powerline` with the same paths.
 
-### `rbenv`
+#### `rbenv`
 
-#### `default-gems`
+##### `default-gems`
 
 `$(rbenv root)/default-gems`
 
-### `vscode`
+#### `vscode`
 
-#### `settings.json`
+##### `settings.json`
 
 - macOS: `$HOME/Library/Application Support/Code/User/settings.json`
