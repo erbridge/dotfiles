@@ -1,5 +1,7 @@
 [alias]
 	forcepush = push --force-with-lease
+	pair = !git-pair
+	solo = !git-solo
 
 [core]
 	editor = nano -r 72
