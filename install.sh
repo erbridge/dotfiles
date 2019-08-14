@@ -211,6 +211,21 @@ function make-file-symlinks {
   echo
 }
 
+while true; do
+  INSTALL_PACKAGES=
+  read -rp "Do you want to install packages from dotfiles? [y/N] " INSTALL_PACKAGES
+
+  if [ "$INSTALL_PACKAGES" = "y" ] || [ "$INSTALL_PACKAGES" = "Y" ]; then
+    if command -v brew > /dev/null 2>&1; then
+      brew bundle --file="$SCRIPT_PATH/homebrew/Brewfile"
+    fi
+
+    break
+  elif ! [ "$INSTALL_PACKAGES" ] || [ "$INSTALL_PACKAGES" = "n" ] || [ "$INSTALL_PACKAGES" = "N" ]; then
+    break
+  fi
+done
+
 make-file-symlinks home "$HOME"
 make-dir-symlink powerline "$HOME/.config/powerline"
 

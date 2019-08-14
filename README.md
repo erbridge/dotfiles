@@ -17,6 +17,13 @@ $ ./install.sh
 
 All files belong in `$HOME` with the same paths.
 
+#### `homebrew`
+
+##### `Brewfile`
+
+Run `brew bundle --file=path/to/Brewfile` to configure taps and install
+packages. Update with `brew bundle dump --file=path/to/Brewfile --force`.
+
 #### `powerline`
 
 All files belong in `$HOME/.config/powerline` with the same paths.
