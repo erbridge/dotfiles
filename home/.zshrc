@@ -160,10 +160,10 @@ fi
 # Prompt
 #
 
-if command -v pip > /dev/null 2>&1 && pip show powerline-status > /dev/null 2>&1; then
+if command -v pip3 > /dev/null 2>&1 && pip3 show powerline-status > /dev/null 2>&1; then
   powerline-daemon -q
 
-  POWERLINE_ROOT="$(pip show powerline-status | grep Location | sed 's/Location: //')/powerline"
+  POWERLINE_ROOT="$(pip3 show powerline-status | grep Location | sed 's/Location: //')/powerline"
   POWERLINE_PATH="$POWERLINE_ROOT/bindings/zsh/powerline.zsh"
 
   if [[ -f $POWERLINE_PATH ]]; then
