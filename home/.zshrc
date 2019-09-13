@@ -1,6 +1,31 @@
 # shellcheck disable=SC2148
 
 #
+# Configuration Variables
+#
+
+HISTFILE="$HOME/.histfile"
+
+HISTSIZE=999999999
+# shellcheck disable=SC2034
+SAVEHIST=$HISTSIZE
+
+# shellcheck disable=SC2034
+WORDCHARS=''
+
+ZSH_CACHE_DIR="$HOME/.zcache"
+
+#
+# Variables
+#
+
+export EDITOR=nano
+
+if command -v code > /dev/null 2>&1; then
+  export VISUAL=code
+fi
+
+#
 # ZSH Setup
 #
 
@@ -11,20 +36,15 @@ if command -v brew > /dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-zstyle ':completion:*' completer _expand _complete _ignored
-zstyle ':completion:*' completions 1
-zstyle ':completion:*' glob 1
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' matcher-list '' '+m:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=* r:|=*' '+l:|=* r:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' original false
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' substitute 1
-zstyle :compinstall filename "$HOME/.zshrc"
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir -p "$ZSH_CACHE_DIR"
+fi
 
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt pushdminus
+
+setopt interactivecomments
 
 # History
 setopt hist_find_no_dups
@@ -34,18 +54,32 @@ setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt share_history
 
+# Completion
+setopt always_to_end
+setopt auto_menu
+setopt complete_in_word
+unsetopt flowcontrol
+unsetopt menu_complete
+
+zmodload -i zsh/complist
+
+# zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+zstyle ':completion:*:*:*:*:processes' command "ps -u $USER -o pid,user,comm -w -w"
+zstyle ':completion:*:cd:*' tag-order local-directories directory-stack path-directories
+zstyle ':completion::complete:*' use-cache true
+zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR"
+
 autoload -Uz compinit
 compinit
 
 #
-# Configuration Variables
+# Plugins
 #
-
-HISTFILE="$HOME/.histfile"
-
-HISTSIZE=999999999
-# shellcheck disable=SC2034
-SAVEHIST=$HISTSIZE
 
 # zsh-syntax-highlighting settings
 # shellcheck disable=SC2034
@@ -60,16 +94,6 @@ ZGEN_RESET_ON_CHANGE="$HOME/.zshrc"
 ZGEN_PLUGIN_UPDATE_DAYS=7
 # shellcheck disable=SC2034
 ZGEN_SYSTEM_UPDATE_DAYS=7
-
-#
-# Variables
-#
-
-export EDITOR=nano
-
-#
-# Plugins
-#
 
 # Setup zgen
 ZGEN_CLONE_DIR="$HOME/zgen"
@@ -176,6 +200,8 @@ function take() {
 #
 
 bindkey -e
+
+bindkey -M menuselect '^o' accept-and-infer-next-history
 
 # zsh-history-substring-search key bindings
 bindkey '^[[A' history-substring-search-up
