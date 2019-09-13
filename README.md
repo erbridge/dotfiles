@@ -36,6 +36,8 @@ All files belong in `$HOME/.config/powerline` with the same paths.
 
 #### `vscode`
 
-##### `settings.json`
+##### `user`
 
-- macOS: `$HOME/Library/Application Support/Code/User/settings.json`
+All files belong in the following directories with the same paths.
+
+- macOS: `$HOME/Library/Application Support/Code/User`

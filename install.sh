@@ -230,7 +230,7 @@ make-file-symlinks home "$HOME"
 make-dir-symlink powerline "$HOME/.config/powerline"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  make-file-symlinks vscode "$HOME/Library/Application Support/Code/User"
+  make-file-symlinks vscode/user "$HOME/Library/Application Support/Code/User"
 fi
 
 if command -v rbenv > /dev/null 2>&1; then
