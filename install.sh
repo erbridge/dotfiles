@@ -229,6 +229,21 @@ done
 make-file-symlinks home "$HOME"
 make-dir-symlink powerline "$HOME/.config/powerline"
 
+if command -v code > /dev/null 2>&1; then
+  while true; do
+    INSTALL_PACKAGES=
+    read -rp "Do you want to install VSCode extensions from dotfiles? [y/N] " INSTALL_PACKAGES
+
+    if [ "$INSTALL_PACKAGES" = "y" ] || [ "$INSTALL_PACKAGES" = "Y" ]; then
+      xargs -n 1 code --install-extension < "$SCRIPT_PATH/vscode/extension-list"
+
+      break
+    elif ! [ "$INSTALL_PACKAGES" ] || [ "$INSTALL_PACKAGES" = "n" ] || [ "$INSTALL_PACKAGES" = "N" ]; then
+      break
+    fi
+  done
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   make-file-symlinks vscode/user "$HOME/Library/Application Support/Code/User"
 fi

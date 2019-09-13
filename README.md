@@ -36,6 +36,11 @@ All files belong in `$HOME/.config/powerline` with the same paths.
 
 #### `vscode`
 
+##### `extention-list`
+
+Run `xargs -n 1 code --install-extension < path/to/extension-list` to install
+extensions. Update with `code --list-extensions > path/to/extension-list`.
+
 ##### `user`
 
 All files belong in the following directories with the same paths.
