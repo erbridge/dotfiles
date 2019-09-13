@@ -1,6 +1,12 @@
 {
   "breadcrumbs.enabled": true,
   "debug.inlineValues": true,
+  "editor.autoIndent": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.cursorSurroundingLines": 3,
   "editor.dragAndDrop": false,
   "editor.fontFamily": "'Fira Mono', monospace",
   "editor.fontSize": 14,
@@ -14,23 +20,35 @@
   "editor.wordWrap": "on",
   "editor.wrappingIndent": "indent",
   "explorer.autoReveal": false,
-  "files.autoGuessEncoding": true,
+  "files.associations": {
+    "*.js.erb": "javascript"
+  },
   "files.hotExit": "onExitAndWindowClose",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "prettier.proseWrap": "always",
   "ruby.codeCompletion": "rcodetools",
   "ruby.format": "rubocop",
-  "ruby.intellisense": "rubyLocate",
-  "ruby.lint": { "rubocop": true },
+  "ruby.intellisense": false,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true
+    }
+  },
   "ruby.lintDebounceTime": 1500,
+  "ruby.useBundler": true,
+  "ruby.useLanguageServer": true,
   "search.location": "panel",
   "search.showLineNumbers": true,
   "search.smartCase": true,
+  "shellcheck.executablePath": "/usr/local/bin/shellcheck",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.fontFamily": "'Fira Mono for Powerline', 'Fira Mono', monospace",
   "terminal.integrated.fontSize": 13,
+  "terminal.integrated.inheritEnv": false,
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
   "window.newWindowDimensions": "maximized",
   "window.restoreWindows": "all",
@@ -38,12 +56,17 @@
   "workbench.colorTheme": "Neon Verdigris",
   "workbench.commandPalette.preserveInput": true,
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.closeEmptyGroups": false,
   "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.openPositioning": "last",
   "workbench.quickOpen.preserveInput": true,
   "workbench.settings.openDefaultKeybindings": true,
   "workbench.settings.openDefaultSettings": true,
   "workbench.settings.useSplitJSON": true,
   "workbench.startupEditor": "none",
-  "workbench.statusBar.feedback.visible": false,
-  "workbench.view.alwaysShowHeaderActions": true
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.view.alwaysShowHeaderActions": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
