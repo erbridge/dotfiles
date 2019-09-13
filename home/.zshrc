@@ -152,6 +152,10 @@ if command -v rbenv > /dev/null 2>&1; then
   fi
 fi
 
+if command -v nodenv > /dev/null 2>&1; then
+  eval "$(nodenv init -)"
+fi
+
 #
 # Prompt
 #
