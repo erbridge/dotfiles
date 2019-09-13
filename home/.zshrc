@@ -217,4 +217,8 @@ bindkey '^[[B' history-substring-search-down
 # Finishing Touches
 #
 
+if command -v brew > /dev/null 2>&1; then
+  PATH="$(brew --prefix)/sbin:$PATH"
+fi
+
 export PATH="$HOME/bin:$PATH"
