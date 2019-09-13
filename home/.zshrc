@@ -191,6 +191,8 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
+alias ls='ls -G'
+
 if command -v hub > /dev/null 2>&1; then
   alias git=hub
 fi
