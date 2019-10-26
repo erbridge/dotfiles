@@ -88,6 +88,8 @@
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "window.newWindowDimensions": "maximized",
   "window.restoreWindows": "all",
   "window.title": "${activeEditorMedium}${separator}${rootName}",
