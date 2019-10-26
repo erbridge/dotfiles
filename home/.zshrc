@@ -135,6 +135,14 @@ if ! zgen saved; then
   zgen save
 fi
 
+if command -v nano > /dev/null 2>&1; then
+  NANORC_DIR="$HOME/.nano"
+
+  if [[ ! -d $NANORC_DIR ]]; then
+    git clone git@github.com:scopatz/nanorc.git "$NANORC_DIR"
+  fi
+fi
+
 if [[ -v ITERM_SESSION_ID ]]; then
   ITERM_INTEGRATION_PATH="$HOME/.iterm2_shell_integration.zsh"
 
