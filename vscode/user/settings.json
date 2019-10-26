@@ -1,5 +1,27 @@
 {
   "breadcrumbs.enabled": true,
+  "cSpell.ignoreRegExpList": [
+    "&\\w+;",
+    "[A-Z]{3}\\w*"
+  ],
+  "cSpell.language": "en-GB",
+  "cSpell.userWords": [
+    "apps",
+    "dotenv",
+    "dxw",
+    "dxw's",
+    "firefox",
+    "linting",
+    "nodenv",
+    "prerender",
+    "remortgage",
+    "screenshot",
+    "spec",
+    "stateful",
+    "todos",
+    "toolset",
+    "zeit"
+  ],
   "debug.inlineValues": true,
   "editor.autoIndent": false,
   "editor.codeActionsOnSave": {
