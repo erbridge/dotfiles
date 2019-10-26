@@ -101,10 +101,6 @@ ZGEN_SCRIPT_PATH="$ZGEN_CLONE_DIR/zgen.zsh"
 
 if [[ ! -f $ZGEN_SCRIPT_PATH ]]; then
   git clone git@github.com:tarjoilija/zgen.git "$ZGEN_CLONE_DIR"
-elif pushd "$ZGEN_CLONE_DIR" > /dev/null; then
-  git checkout master
-  git pull
-  popd > /dev/null || exit 1
 fi
 
 # shellcheck source=/dev/null
