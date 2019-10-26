@@ -97,7 +97,7 @@ function symlink-dir {
   source_dir=$(dirname "$source_path")
 
   mkdir -p "$target_dir"
-  ln -sniFv "$source_path" "$target_path"
+  ln -sniFv "$source_path" "$target_path" || true
 }
 
 function symlink-file {
@@ -111,7 +111,7 @@ function symlink-file {
   target_path=$target_dir/$source_relpath
 
   mkdir -p "$(dirname "$target_path")"
-  ln -siFv "$source_path" "$target_path"
+  ln -siFv "$source_path" "$target_path" || true
 }
 
 function make-dir-symlink {
