@@ -1,22 +1,60 @@
 [alias]
+	amend = commit --amend
+	fixup = commit --fixup
 	forcepush = push --force-with-lease
 	pair = !git-pair
 	solo = !git-solo
 
 [core]
 	editor = nano -r 72
-	excludesfile = ~/.gitignore
+	excludesFile = ~/.gitignore
 	hooksPath = ~/.githooks
 
+[commit]
+	verbose = true
+
+[diff]
+	algorithm = patience
+	indentHeuristic = true
+	mnemonicPrefix = true
+	renames = copies
+
+[fetch]
+	prune = true
+	pruneTags = true
+
+[interactive]
+	singleKey = true
+
+[log]
+	abbrevCommit = true
+
+[pull]
+	rebase = merges
+
 [rebase]
-	autosquash = true
+	abbreviateCommands = true
+	autoSquash = true
+	autoStash = true
+	missingCommitsCheck = warn
+	stat = true
+
+[remote]
+	pushDefault = origin
+
+[status]
+	branch = true
+	relativePaths = false
+	short = true
+
+[stash]
+	showPatch = true
 
 [transfer]
-	fsckobjects = true
+	fsckObjects = true
 
 [user]
-	email = f@erbridge.co.uk
-	name = erbridge
+	useConfigOnly = true
 
 [include]
 	path = ~/.gitconfig.local
