@@ -78,6 +78,15 @@ autoload -Uz compinit
 compinit
 
 #
+# SSH
+#
+
+if command -v ssh-agent > /dev/null 2>&1; then
+  eval "$(ssh-agent)"
+  ssh-add -A
+fi
+
+#
 # Plugins
 #
 
