@@ -154,6 +154,13 @@ fi
 
 if command -v nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
+
+  NODENV_PLUGIN_DIR="$(nodenv root)/plugins"
+  NODE_BUILD_UPDATE_DEFS_DIR="$NODENV_PLUGIN_DIR/node-build-update-defs"
+
+  if [[ ! -d $NODE_BUILD_UPDATE_DEFS_DIR ]]; then
+    git clone git@github.com:nodenv/node-build-update-defs.git "$NODE_BUILD_UPDATE_DEFS_DIR"
+  fi
 fi
 
 #
