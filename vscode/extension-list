@@ -1,5 +1,11 @@
+alexkrechik.cucumberautocomplete
+AndrewRazumovsky.vscode-styled-jsx-languageserver
+bencoleman.armview
+blanu.vscode-styled-jsx
 bung87.vscode-gemfile
 castwide.solargraph
+dbaeumer.vscode-eslint
+dunstontc.vscode-todotxt
 eamodio.gitlens
 erbridge.neon-verdigris-theme
 esbenp.prettier-vscode
@@ -13,7 +19,11 @@ mikestead.dotenv
 ms-azuretools.vscode-docker
 MS-CEINTL.vscode-language-pack-en-GB
 msazurermtools.azurerm-vscode-tools
+Orta.vscode-jest
+rarnoldmobile.todo-txt
 rebornix.ruby
+shinnn.alex
 silvenon.mdx
+streetsidesoftware.code-spell-checker
 thomas-baumgaertner.vcl
 timonwong.shellcheck
