@@ -37,7 +37,9 @@
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.renderWhitespace": "boundary",
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.suggest.localityBonus": true,
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
@@ -91,5 +93,5 @@
   "workbench.view.alwaysShowHeaderActions": true,
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
 }
