@@ -13,6 +13,12 @@ $ ./install.sh
 
 ### Manual File Locations
 
+#### `git`
+
+##### `hooks`
+
+All files belong in `$HOME/.config/git/hooks` with the same names.
+
 #### `home`
 
 All files belong in `$HOME` with the same paths.

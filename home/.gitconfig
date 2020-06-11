@@ -9,7 +9,7 @@
 [core]
 	editor = nano -r 72
 	excludesFile = ~/.gitignore
-	hooksPath = ~/.githooks
+	hooksPath = ~/.config/git/hooks
 
 [commit]
 	verbose = true
