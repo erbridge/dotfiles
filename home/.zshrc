@@ -184,6 +184,11 @@ if command -v goenv > /dev/null 2>&1; then
   eval "$(goenv init -)"
 fi
 
+if [[ -f "$HOME/.travis/travis.sh" ]]; then
+  # shellcheck source=/dev/null
+  source "$HOME/.travis/travis.sh"
+fi
+
 #
 # Prompt
 #
