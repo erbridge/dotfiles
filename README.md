@@ -23,7 +23,7 @@ All files belong in `$HOME/.config/git/hooks` with the same names.
 
 #### `home`
 
-All files belong in `$HOME` with the same paths.
+All files and directories belong in `$HOME` with the same paths.
 
 #### `homebrew`
 
@@ -34,7 +34,8 @@ packages. Update with `brew bundle dump --file=path/to/Brewfile --force`.
 
 #### `powerline`
 
-All files belong in `$HOME/.config/powerline` with the same paths.
+All files and directories belong in `$HOME/.config/powerline` with the same
+paths.
 
 #### `rbenv`
 
@@ -51,6 +52,7 @@ extensions. Update with `code --list-extensions > path/to/extension-list`.
 
 ##### `user`
 
-All files belong in the following directories with the same paths.
+All files and directories belong in the following directories with the same
+paths.
 
 - macOS: `$HOME/Library/Application Support/Code/User`
