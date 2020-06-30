@@ -180,6 +180,10 @@ if command -v nodenv > /dev/null 2>&1; then
   fi
 fi
 
+if command -v goenv > /dev/null 2>&1; then
+  eval "$(goenv init -)"
+fi
+
 #
 # Prompt
 #
