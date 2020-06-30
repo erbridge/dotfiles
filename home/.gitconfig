@@ -23,6 +23,7 @@
 [fetch]
 	prune = true
 	pruneTags = true
+	writeCommitGraph = true
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
