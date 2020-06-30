@@ -204,5 +204,11 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+
+  /**
+   * Cleaner UI
+   */
+  "workbench.activityBar.visible": false,
+  "workbench.editor.showTabs": false
 }
