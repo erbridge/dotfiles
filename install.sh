@@ -228,6 +228,7 @@ done
 
 make-file-symlinks home "$HOME"
 make-dir-symlink git/hooks "$HOME/.config/git/hooks"
+make-dir-symlink git/template "$HOME/.config/git/template"
 make-dir-symlink powerline "$HOME/.config/powerline"
 
 if command -v code > /dev/null 2>&1; then
