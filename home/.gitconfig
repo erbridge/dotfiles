@@ -33,6 +33,9 @@
 [pull]
 	rebase = merges
 
+[push]
+	default = current
+
 [rebase]
 	abbreviateCommands = true
 	autoSquash = true
