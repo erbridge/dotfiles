@@ -36,7 +36,7 @@ if command -v brew > /dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-if [[ ! -d $ZSH_CACHE_DIR ]]; then
+if [[ ! -d "$ZSH_CACHE_DIR" ]]; then
   mkdir -p "$ZSH_CACHE_DIR"
 fi
 
@@ -108,7 +108,7 @@ ZGEN_SYSTEM_UPDATE_DAYS=7
 ZGEN_CLONE_DIR="$HOME/zgen"
 ZGEN_SCRIPT_PATH="$ZGEN_CLONE_DIR/zgen.zsh"
 
-if [[ ! -f $ZGEN_SCRIPT_PATH ]]; then
+if [[ ! -f "$ZGEN_SCRIPT_PATH" ]]; then
   git clone git@github.com:tarjoilija/zgen.git "$ZGEN_CLONE_DIR"
 fi
 
@@ -138,7 +138,7 @@ fi
 if command -v nano > /dev/null 2>&1; then
   NANORC_DIR="$HOME/.nano"
 
-  if [[ ! -d $NANORC_DIR ]]; then
+  if [[ ! -d "$NANORC_DIR" ]]; then
     git clone git@github.com:scopatz/nanorc.git "$NANORC_DIR"
   fi
 fi
