@@ -252,6 +252,10 @@ bindkey '^[[B' history-substring-search-down
 
 if command -v brew > /dev/null 2>&1; then
   PATH="$(brew --prefix)/sbin:$PATH"
+  export PATH
+
+  RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+  export RUBY_CONFIGURE_OPTS
 fi
 
 export PATH="$HOME/bin:$PATH"
