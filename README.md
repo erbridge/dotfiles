@@ -48,6 +48,10 @@ paths.
 
 `$(rbenv root)/default-gems`
 
+#### `starship`
+
+All files belong in `$HOME/.config` with the same paths.
+
 #### `vscode`
 
 ##### `extention-list`

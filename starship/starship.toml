@@ -1,0 +1,139 @@
+format = """
+$cmd_duration\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+$git_state\
+$hg_branch\
+$line_break\
+$package\
+$aws\
+$gcloud\
+$openstack\
+$golang\
+$nodejs\
+$php\
+$conda\
+$python\
+$ruby\
+$rust\
+$terraform\
+$line_break\
+$memory_usage\
+$battery\
+$jobs\
+$shlvl\
+$status\
+$character"""
+
+[aws]
+format = "using [aws](yellow) [$profile( \\($region\\))](bold dimmed) "
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]
+threshold = 30
+style = "yellow"
+
+[[battery.display]]
+threshold = 90
+style = "green"
+
+[character]
+use_symbol_for_status = true
+
+[cmd_duration]
+format = "[  took $duration  ](bold black bg:yellow)\n"
+
+[conda]
+format = "with [conda](green) [$environment](bold dimmed) "
+
+[directory]
+truncate_to_repo = false
+style = "bold dimmed"
+read_only = "readonly"
+
+[gcloud]
+format = "using [goog](blue) [$account( \\($region\\))](bold dimmed) "
+
+[git_branch]
+style = "bold dimmed"
+
+[git_commit]
+format = "[$hash](dimmed) ([\\($tag\\)](dimmed) )"
+tag_disabled = false
+tag_symbol = ""
+
+[git_state]
+am_or_rebase = "AM/REBASING"
+
+[git_status]
+conflicted = "[✖ $count](purple) "
+ahead = "[⇡ $count](white) "
+behind = "[⇣ $count](white) "
+diverged = "[⇡ $ahead_count ⇣ $behind_count](white) "
+untracked = "[⋯ $count](yellow) "
+stashed = "[⚑ $count](cyan) "
+modified = "[+ $count](red) "
+staged = "[✓ $count](green) "
+renamed = "[» $count](blue) "
+deleted = "[- $count](blue) "
+format = "$ahead_behind$all_status"
+
+[golang]
+format = "with [go](cyan) [$version](bold dimmed) "
+
+[hg_branch]
+style = "bold yellow"
+
+[hostname]
+format = "[$hostname//]($style)"
+
+[jobs]
+threshold = 0
+format = "[+](bold blue)[$number](dimmed) "
+
+[memory_usage]
+threshold = 90
+format = "[mem](dimmed yellow) [$ram_pct](bold yellow)( [swap](dimmed yellow) [$swap_pct](bold yellow)) "
+disabled = false
+
+[nodejs]
+format = "with [js](green) [$version](bold dimmed) "
+
+[openstack]
+format = "using [openstack](red) [$cloud( \\($project\\))](bold dimmed) "
+
+[package]
+format = "at [$version](bold dimmed) "
+
+[php]
+format = "with [php](purple) [$version](bold dimmed) "
+
+[python]
+format = "with [py](blue) [$version](bold dimmed) "
+
+[ruby]
+format = "with [rb](red) [$version](bold dimmed) "
+
+[rust]
+format = "with [rs](red) [$version](bold dimmed) "
+
+[shlvl]
+format = "[❯](bold yellow)[$shlvl](dimmed) "
+disabled = false
+
+[status]
+format = "[$status](dimmed red)"
+disabled = false
+
+[terraform]
+format = "with [tf](purple) [$version](bold dimmed) "
+
+[username]
+format = "[$user@]($style)"
