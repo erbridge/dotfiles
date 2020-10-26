@@ -21,11 +21,6 @@ $ ./install.sh
 
 All files belong in `$HOME/.config/git/hooks` with the same names.
 
-##### `template`
-
-All files and directories belong in `$HOME/.config/git/template` with the same
-paths. While the template directory can be a symlink, none of its children can.
-
 #### `home`
 
 All files and directories belong in `$HOME` with the same paths.
