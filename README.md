@@ -15,6 +15,10 @@ $ ./install.sh
 
 ### Manual File Locations
 
+#### `cargo`
+
+All files belong in `$HOME/.cargo` with the same paths.
+
 #### `git`
 
 ##### `hooks`
