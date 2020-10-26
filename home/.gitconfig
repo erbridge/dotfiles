@@ -7,6 +7,7 @@
 	solo = !git-solo
 
 [core]
+	attributesFile = ~/.gitattributes
 	editor = nano -r 72
 	excludesFile = ~/.gitignore
 	hooksPath = ~/.config/git/hooks
@@ -19,6 +20,9 @@
 	indentHeuristic = true
 	mnemonicPrefix = true
 	renames = copies
+
+[diff "rspec"]
+	xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario)[ \t].*)$"
 
 [fetch]
 	prune = true
