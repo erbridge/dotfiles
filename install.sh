@@ -216,6 +216,10 @@ while true; do
   read -rp "Do you want to install packages from dotfiles? [y/N] " INSTALL_PACKAGES
 
   if [ "$INSTALL_PACKAGES" = "y" ] || [ "$INSTALL_PACKAGES" = "Y" ]; then
+    if [[ "$OSTYPE" == "darwin"* ]] && ! command -v brew > /dev/null 2>&1; then
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+
     if command -v brew > /dev/null 2>&1; then
       brew bundle --file="$SCRIPT_PATH/homebrew/Brewfile"
     fi
