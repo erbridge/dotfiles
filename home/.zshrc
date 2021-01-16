@@ -129,7 +129,7 @@ if ! zgen saved; then
 
   # Other plugins
   zgen load djui/alias-tips
-  zgen load RobSis/zsh-completion-generator
+  # zgen load RobSis/zsh-completion-generator
   zgen load unixorn/autoupdate-zgen
 
   zgen save
