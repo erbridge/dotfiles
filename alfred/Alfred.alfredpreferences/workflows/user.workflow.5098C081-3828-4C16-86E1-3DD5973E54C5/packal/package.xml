@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Roll the Dice</name>
+  <version>1.0.2</version>
+  <bundle>com.codeserious.RollTheDice</bundle>
+  <updated>1483546280</updated>
+  <file>roll_the_dice.alfredworkflow</file>
+</workflow>

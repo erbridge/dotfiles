@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.codeserious.RollTheDice</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>050F0630-800D-4428-9E64-631DE90F6E39</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Sean Kennedy</string>
+	<key>description</key>
+	<string>Use keyword 'roll' to roll some dice!</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Roll the Dice</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>largetypetext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.largetype</string>
+			<key>uid</key>
+			<string>050F0630-800D-4428-9E64-631DE90F6E39</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>roll</string>
+				<key>subtext</key>
+				<string>Example: "roll 1d20", "roll 2d6"</string>
+				<key>text</key>
+				<string>Roll the Dice</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>15299C7A-CDEA-4359-8898-446F2892DB7C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>/**
+ * CodeSerious_RollSomeDice
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT LICENSE
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/MIT
+ *
+ * @category   CodeSerious
+ * @package    CodeSerious_RollSomeDice
+ * @copyright  Copyright 2017 Splitleaf, LLC
+ * @license    http://opensource.org/licenses/MIT
+ * @author     Sean Kennedy &lt;sean@splitleaf.net&gt;
+ * @version    1.0.2
+ */
+
+// Variables
+mt_srand(crc32(microtime()));
+$_query = "{query}";
+$_output = '';
+$_numDice = 1;
+$_typeDice;
+
+// Just a number? Roll it!
+if (is_numeric($_query)) {
+  $_output .= mt_rand(1, (int)$_query);
+  die($_output);
+}
+
+// Specific number of dice
+if (!strstr($_query, 'd'))
+  die('Error; use a command like "roll 1d20"!');
+
+// Get dice values
+$_diceRollArr = explode('d', $_query);
+if (!empty($_diceRollArr[0]) &amp;&amp; (int)$_diceRollArr[0]&gt;0)
+  $_numDice = $_diceRollArr[0];
+if (!empty($_diceRollArr[1]) &amp;&amp; (int)$_diceRollArr[1]&lt;0)
+  die("Error; dice type not set!");
+
+// Do the rolls
+$_typeDice = $_diceRollArr[1];
+for($i=1;$i&lt;=$_numDice;$i++):
+  $_output .= mt_rand(1, (int)$_typeDice);
+  if($i&lt;$_numDice)
+    $_output .= ', ';
+endfor;
+
+// What're the rolls?
+die($_output);</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Roll Some Dice!
+=====================
+
+An Alfred Workflow that allows you to roll dice by using the keyword 'roll'
+
+### Usage
+
+    roll 1d20</string>
+	<key>uidata</key>
+	<dict>
+		<key>050F0630-800D-4428-9E64-631DE90F6E39</key>
+		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>15299C7A-CDEA-4359-8898-446F2892DB7C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>FF316160-82F1-4AC1-8D82-72A1F0AC9ED6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://www.codeserious.com</string>
+</dict>
+</plist>

@@ -266,4 +266,14 @@ if command -v rbenv > /dev/null 2>&1; then
   make-file-symlinks rbenv "$(rbenv root)"
 fi
 
-echo "Done!"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  echo "Now set up Alfred and you're done!"
+  echo
+  echo "Alfred's settings are here:"
+  echo "  $SCRIPT_PATH/alfred"
+  echo
+  echo "Follow the instructions here:"
+  echo "  https://www.alfredapp.com/help/advanced/sync/"
+else
+  echo "Done!"
+fi

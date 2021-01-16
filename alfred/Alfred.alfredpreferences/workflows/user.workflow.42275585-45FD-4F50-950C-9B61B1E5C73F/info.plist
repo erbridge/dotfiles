@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>uk.co.erbridge.colourpicker</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>4D505D84-C8EF-4185-B0BA-D841652D14B7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1A6A768D-B644-4E76-82AE-D2EC50C67C59</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>erbridge</string>
+	<key>description</key>
+	<string>Open macOS' built in colour picker</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Colour Picker</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  choose color
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1A6A768D-B644-4E76-82AE-D2EC50C67C59</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>colour picker</string>
+				<key>subtext</key>
+				<string>Open macOS' built in colour picker</string>
+				<key>text</key>
+				<string>Colour Picker</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>4D505D84-C8EF-4185-B0BA-D841652D14B7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>1A6A768D-B644-4E76-82AE-D2EC50C67C59</key>
+		<dict>
+			<key>xpos</key>
+			<integer>325</integer>
+			<key>ypos</key>
+			<integer>125</integer>
+		</dict>
+		<key>4D505D84-C8EF-4185-B0BA-D841652D14B7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>120</integer>
+			<key>ypos</key>
+			<integer>125</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://erbridge.co.uk</string>
+</dict>
+</plist>
