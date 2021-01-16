@@ -81,7 +81,7 @@ compinit
 # SSH
 #
 
-if command -v ssh-agent > /dev/null 2>&1; then
+if [[ $TERM_PROGRAM != vscode ]] && command -v ssh-agent > /dev/null 2>&1; then
   eval "$(ssh-agent)"
   ssh-add -A
 fi
@@ -115,7 +115,7 @@ fi
 # shellcheck source=/dev/null
 source "$ZGEN_SCRIPT_PATH"
 
-if ! zgen saved; then
+if [[ $TERM_PROGRAM != vscode ]] && ! zgen saved; then
   # oh-my-zsh plugins
   zgen oh-my-zsh plugins/autojump
   zgen oh-my-zsh plugins/iterm2
