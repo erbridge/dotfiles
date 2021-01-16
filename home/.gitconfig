@@ -2,9 +2,7 @@
 	amend = commit --amend
 	fixup = commit --fixup
 	forcepush = push --force-with-lease
-	pair = !git-pair
 	patch = !git add --intent-to-add $(git rev-parse --show-toplevel) && git add --patch
-	solo = !git-solo
 
 [core]
 	attributesFile = ~/.gitattributes
