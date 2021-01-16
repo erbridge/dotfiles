@@ -7,6 +7,11 @@ if ! command -v python > /dev/null 2>&1; then
   exit 1
 fi
 
+if ! command -v perl > /dev/null 2>&1; then
+  echo "Perl is required to run this script. Install it and try again."
+  exit 1
+fi
+
 SCRIPT_PATH=$(cd "$(dirname "$0")"; pwd -P)
 
 function relpath {
