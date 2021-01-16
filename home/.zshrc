@@ -242,7 +242,7 @@ else
 fi
 
 if command -v hub > /dev/null 2>&1; then
-  alias git=hub
+  alias git='hub'
 fi
 
 function take() {
