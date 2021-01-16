@@ -15,8 +15,52 @@
   },
 
   /**
-   * Activity Bar
+   * Sidebar
    */
+  // Side[b]ar
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+k cmd+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+
+  // De[b]ug
+  {
+    "key": "cmd+k cmd+b",
+    "command": "workbench.view.debug"
+  },
+  {
+    "key": "cmd+k cmd+b",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.debug'"
+  },
+
+  // [E]xplorer
+  {
+    "key": "cmd+k cmd+e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "cmd+k cmd+e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.explorer'"
+  },
+
+  // [T]est Explorer
+  {
+    "key": "cmd+k cmd+t",
+    "command": "test-explorer.focus"
+  },
+  {
+    "key": "cmd+k cmd+t",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "testExplorerVisible"
+  },
+
+  // E[x]tensions
   {
     "key": "cmd+k cmd+m",
     "command": "-workbench.extensions.action.showRecommendedKeymapExtensions"
@@ -26,19 +70,12 @@
     "command": "-workbench.view.extensions"
   },
   {
-    "key": "cmd+k cmd+e",
-    "command": "workbench.view.explorer"
-  },
-  {
-    "key": "cmd+k cmd+d",
-    "command": "workbench.view.debug"
-  },
-  {
-    "key": "cmd+k cmd+t",
-    "command": "test-explorer.focus"
-  },
-  {
     "key": "cmd+k cmd+x",
     "command": "workbench.view.extensions"
   }
+  {
+    "key": "cmd+k cmd+x",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "activeViewlet == 'workbench.view.extensions'"
+  },
 ]
