@@ -193,28 +193,9 @@ fi
 # Prompt
 #
 
-PROMPT_TYPE=${PROMPT_TYPE:-starship}
-
-case $PROMPT_TYPE in
-  powerline)
-    if command -v pip3 > /dev/null 2>&1 && pip3 show powerline-status > /dev/null 2>&1; then
-      powerline-daemon -q
-
-      POWERLINE_ROOT="$(pip3 show powerline-status | grep Location | sed 's/Location: //')/powerline"
-      POWERLINE_PATH="$POWERLINE_ROOT/bindings/zsh/powerline.zsh"
-
-      if [[ -f $POWERLINE_PATH ]]; then
-        # shellcheck source=/dev/null
-        source "$POWERLINE_PATH"
-      fi
-    fi
-    ;;
-  starship)
-    if command -v starship > /dev/null 2>&1; then
-      eval "$(starship init zsh)"
-    fi
-    ;;
-esac
+if command -v starship > /dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
 
 #
 # Aliases and Functions

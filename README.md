@@ -36,11 +36,6 @@ All files and directories belong in `$HOME` with the same paths.
 Run `brew bundle --file=path/to/Brewfile` to configure taps and install
 packages. Update with `brew bundle dump --file=path/to/Brewfile --force`.
 
-#### `powerline`
-
-All files and directories belong in `$HOME/.config/powerline` with the same
-paths.
-
 #### `rbenv`
 
 ##### `default-gems`

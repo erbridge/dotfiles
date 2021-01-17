@@ -238,7 +238,6 @@ done
 make-file-symlinks home "$HOME"
 make-file-symlinks cargo "$HOME/.cargo"
 make-dir-symlink git/hooks "$HOME/.config/git/hooks"
-make-dir-symlink powerline "$HOME/.config/powerline"
 make-file-symlinks starship "$HOME/.config"
 
 if command -v code > /dev/null 2>&1; then
