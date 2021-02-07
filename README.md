@@ -42,6 +42,10 @@ packages. Update with `brew bundle dump --file=path/to/Brewfile --force`.
 
 `$(rbenv root)/default-gems`
 
+#### `ssh`
+
+All files belong in `$HOME/.ssh` with the same paths.
+
 #### `starship`
 
 All files belong in `$HOME/.config` with the same paths.
