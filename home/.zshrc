@@ -230,6 +230,10 @@ function take() {
   mkdir -p "$@" && cd "${@:$#}" || exit 1
 }
 
+function configure-monitors() {
+  displayplacer "id:4A329880-4032-7100-DE79-71A95CA6246A res:1440x900 color_depth:8 scaling:on origin:(0,0) degree:0" "id:31C5597E-A2FF-2BE8-7071-DEAC7D418B8E res:1440x2560 hz:60 color_depth:8 scaling:off origin:(1132,-2560) degree:90"
+}
+
 #
 # Keybindings
 #
