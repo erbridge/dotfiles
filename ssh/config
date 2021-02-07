@@ -3,7 +3,3 @@ Include config.d/*
 Host *
 	AddKeysToAgent yes
 	UseKeychain yes
-
-Host github.com
-	Hostname github.com
-	User git
