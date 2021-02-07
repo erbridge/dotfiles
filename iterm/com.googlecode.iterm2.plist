@@ -6,16 +6,6 @@
 	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>BracketedPasteMode</key>
 	<true/>
 	<key>ConvertDosNewlines</key>
@@ -50383,13 +50373,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.11764705926179886</real>
+				<real>0.23137254901960785</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.10196078568696976</real>
+				<real>0.18823529411764706</real>
 				<key>Red Component</key>
-				<real>0.11372549086809158</real>
+				<real>0.16862745098039217</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -50400,13 +50390,13 @@
 				<key>Alpha Component</key>
 				<real>0.5</real>
 				<key>Blue Component</key>
-				<real>0.36078432202339172</real>
+				<real>0.8666666666666667</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.57254904508590698</real>
+				<real>1</real>
 				<key>Red Component</key>
-				<real>0.88235294818878174</real>
+				<real>0.0</real>
 			</dict>
 			<key>Badge Text</key>
 			<string></string>
@@ -50421,13 +50411,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.92549019607843142</real>
+				<real>0.9137254901960784</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.92549019607843142</real>
+				<real>0.82745098039215681</real>
 				<key>Red Component</key>
-				<real>0.93725490196078431</real>
+				<real>0.78823529411764703</real>
 			</dict>
 			<key>Character Encoding</key>
 			<integer>4</integer>
@@ -50444,39 +50434,39 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.78104829788208008</real>
+				<real>0.9137254901960784</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.78105825185775757</real>
+				<real>0.82745098039215681</real>
 				<key>Red Component</key>
-				<real>0.7810397744178772</real>
+				<real>0.78823529411764703</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
 				<key>Alpha Component</key>
-				<real>0.25</real>
+				<real>0.078431372549019607</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.9137254901960784</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.9268307089805603</real>
+				<real>0.82745098039215681</real>
 				<key>Red Component</key>
-				<real>0.70213186740875244</real>
+				<real>0.78823529411764703</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.9137254901960784</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.82745098039215681</real>
 				<key>Red Component</key>
-				<real>0.99999600648880005</real>
+				<real>0.78823529411764703</real>
 			</dict>
 			<key>Cursor Type</key>
 			<integer>1</integer>
@@ -50499,13 +50489,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.92601859569549561</real>
+				<real>0.9137254901960784</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.92601859569549561</real>
+				<real>0.82745098039215681</real>
 				<key>Red Component</key>
-				<real>0.9390869140625</real>
+				<real>0.78823529411764703</real>
 			</dict>
 			<key>Guid</key>
 			<string>D180F301-9B67-4900-8110-32F0A3249AC4</string>
@@ -50969,16 +50959,16 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.93333333730697632</real>
+				<real>0.73333333333333328</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.70588237047195435</real>
+				<real>0.32549019607843138</real>
 				<key>Red Component</key>
-				<real>0.364705890417099</real>
+				<real>1</real>
 			</dict>
 			<key>Minimum Contrast</key>
-			<real>0.0</real>
+			<real>0.25674715909090912</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -51010,26 +51000,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.11764705926179886</real>
+				<real>0.23137254901960785</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.10196078568696976</real>
+				<real>0.18823529411764706</real>
 				<key>Red Component</key>
-				<real>0.11372549086809158</real>
+				<real>0.16862745098039217</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.36111107468605042</real>
+				<real>0.8666666666666667</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.573403000831604</real>
+				<real>1</real>
 				<key>Red Component</key>
-				<real>0.88055419921875</real>
+				<real>0.0</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -51270,6 +51260,19 @@
 			</dict>
 			<key>Sync Title</key>
 			<false/>
+			<key>Tab Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.23137254901960785</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.18823529411764706</real>
+				<key>Red Component</key>
+				<real>0.16862745098039217</real>
+			</dict>
 			<key>Tags</key>
 			<array/>
 			<key>Terminal Type</key>
@@ -51278,6 +51281,19 @@
 			<integer>6</integer>
 			<key>Transparency</key>
 			<real>0.051503013959390866</real>
+			<key>Underline Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.73333333333333328</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
+				<key>Green Component</key>
+				<real>0.32549019607843138</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -51285,7 +51301,7 @@
 			<key>Use Bright Bold</key>
 			<true/>
 			<key>Use Cursor Guide</key>
-			<false/>
+			<true/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -51293,7 +51309,7 @@
 			<key>Use Tab Color</key>
 			<false/>
 			<key>Use Underline Color</key>
-			<false/>
+			<true/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -51354,6 +51370,8 @@
 	<true/>
 	<key>PromptForPasteWhenNotAtPrompt</key>
 	<true/>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>SearchCommand</key>
 	<string>https://duckduckgo.com/?q=%@</string>
 	<key>SeparateStatusBarsPerPane</key>
@@ -51378,8 +51396,10 @@
 	<true/>
 	<key>TraditionalVisualBell</key>
 	<true/>
+	<key>UIElementRequiresHotkeys</key>
+	<true/>
 	<key>UseBorder</key>
-	<false/>
+	<true/>
 	<key>VerticalBarCursorWidth</key>
 	<real>2</real>
 	<key>VisualIndicatorForEsc</key>
