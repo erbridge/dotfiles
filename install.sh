@@ -267,13 +267,19 @@ if command -v rbenv > /dev/null 2>&1; then
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Now set up Alfred and you're done!"
+  echo "Now set up Alfred and iTerm and you're done!"
   echo
   echo "Alfred's settings are here:"
   echo "  $SCRIPT_PATH/alfred"
   echo
   echo "Follow the instructions here:"
   echo "  https://www.alfredapp.com/help/advanced/sync/"
+  echo
+  echo "iTerm's preferences are here:"
+  echo "  $SCRIPT_PATH/iterm"
+  echo
+  echo "In iTerm's preferences dialogue:"
+  echo "  General > Preferences > Load preferences from a custom folder or URL"
 else
   echo "Done!"
 fi
