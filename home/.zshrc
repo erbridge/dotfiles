@@ -26,15 +26,30 @@ if command -v code > /dev/null 2>&1; then
 fi
 
 #
-# ZSH Setup
+# Homebrew
+#
+
+if command -v /opt/homebrew/bin/brew 2>&1; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+if command -v /usr/local/bin/brew 2>&1; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
+if command -v brew > /dev/null 2>&1; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  RUBY_CONFIGURE_OPTS=--with-openssl-dir=$(brew --prefix openssl@1.1)
+  export RUBY_CONFIGURE_OPTS
+fi
+
+#
+# ZSH
 #
 
 # Uncomment to enable profiling zsh startup time with zprof
 # zmodload zsh/zprof
-
-if command -v brew > /dev/null 2>&1; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-fi
 
 if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir -p "$ZSH_CACHE_DIR"
@@ -249,14 +264,6 @@ bindkey '^[[B' history-substring-search-down
 #
 # Finishing Touches
 #
-
-if command -v brew > /dev/null 2>&1; then
-  PATH="$(brew --prefix)/sbin:$PATH"
-  export PATH
-
-  RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-  export RUBY_CONFIGURE_OPTS
-fi
 
 export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
