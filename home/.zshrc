@@ -4,7 +4,7 @@
 # Configuration Variables
 #
 
-HISTFILE="$HOME/.histfile"
+HISTFILE=$HOME/.histfile
 
 HISTSIZE=999999999
 # shellcheck disable=SC2034
@@ -13,7 +13,7 @@ SAVEHIST=$HISTSIZE
 # shellcheck disable=SC2034
 WORDCHARS=''
 
-ZSH_CACHE_DIR="$HOME/.zcache"
+ZSH_CACHE_DIR=$HOME/.zcache
 
 #
 # Variables
@@ -36,7 +36,7 @@ if command -v brew > /dev/null 2>&1; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-if [[ ! -d "$ZSH_CACHE_DIR" ]]; then
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir -p "$ZSH_CACHE_DIR"
 fi
 
@@ -96,7 +96,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # zgen settings
 # shellcheck disable=SC2034
-ZGEN_RESET_ON_CHANGE="$HOME/.zshrc"
+ZGEN_RESET_ON_CHANGE=$HOME/.zshrc
 
 # autoupdate-zgen settings
 # shellcheck disable=SC2034
@@ -105,10 +105,10 @@ ZGEN_PLUGIN_UPDATE_DAYS=7
 ZGEN_SYSTEM_UPDATE_DAYS=7
 
 # Setup zgen
-ZGEN_CLONE_DIR="$HOME/zgen"
-ZGEN_SCRIPT_PATH="$ZGEN_CLONE_DIR/zgen.zsh"
+ZGEN_CLONE_DIR=$HOME/zgen
+ZGEN_SCRIPT_PATH=$ZGEN_CLONE_DIR/zgen.zsh
 
-if [[ ! -f "$ZGEN_SCRIPT_PATH" ]]; then
+if [[ ! -f $ZGEN_SCRIPT_PATH ]]; then
   git clone git@github.com:tarjoilija/zgen.git "$ZGEN_CLONE_DIR"
 fi
 
@@ -136,15 +136,15 @@ if [[ $TERM_PROGRAM != vscode ]] && ! zgen saved; then
 fi
 
 if command -v nano > /dev/null 2>&1; then
-  NANORC_DIR="$HOME/.nano"
+  NANORC_DIR=$HOME/.nano
 
-  if [[ ! -d "$NANORC_DIR" ]]; then
+  if [[ ! -d $NANORC_DIR ]]; then
     git clone git@github.com:scopatz/nanorc.git "$NANORC_DIR"
   fi
 fi
 
 if [[ -v ITERM_SESSION_ID ]]; then
-  ITERM_INTEGRATION_PATH="$HOME/.iterm2_shell_integration.zsh"
+  ITERM_INTEGRATION_PATH=$HOME/.iterm2_shell_integration.zsh
 
   if [[ ! -f $ITERM_INTEGRATION_PATH ]]; then
     curl -L https://iterm2.com/shell_integration/zsh -o "$ITERM_INTEGRATION_PATH"
@@ -161,8 +161,8 @@ fi
 if command -v rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
 
-  RBENV_PLUGIN_DIR="$(rbenv root)/plugins"
-  RBENV_DEFAULT_GEMS_DIR="$RBENV_PLUGIN_DIR/rbenv-default-gems"
+  RBENV_PLUGIN_DIR=$(rbenv root)/plugins
+  RBENV_DEFAULT_GEMS_DIR=$RBENV_PLUGIN_DIR/rbenv-default-gems
 
   if [[ ! -d $RBENV_DEFAULT_GEMS_DIR ]]; then
     git clone git@github.com:rbenv/rbenv-default-gems.git "$RBENV_DEFAULT_GEMS_DIR"
@@ -172,8 +172,8 @@ fi
 if command -v nodenv > /dev/null 2>&1; then
   eval "$(nodenv init -)"
 
-  NODENV_PLUGIN_DIR="$(nodenv root)/plugins"
-  NODE_BUILD_UPDATE_DEFS_DIR="$NODENV_PLUGIN_DIR/node-build-update-defs"
+  NODENV_PLUGIN_DIR=$(nodenv root)/plugins
+  NODE_BUILD_UPDATE_DEFS_DIR=$NODENV_PLUGIN_DIR/node-build-update-defs
 
   if [[ ! -d $NODE_BUILD_UPDATE_DEFS_DIR ]]; then
     git clone git@github.com:nodenv/node-build-update-defs.git "$NODE_BUILD_UPDATE_DEFS_DIR"
@@ -184,7 +184,7 @@ if command -v goenv > /dev/null 2>&1; then
   eval "$(goenv init -)"
 fi
 
-if [[ -f "$HOME/.travis/travis.sh" ]]; then
+if [[ -f $HOME/.travis/travis.sh ]]; then
   # shellcheck source=/dev/null
   source "$HOME/.travis/travis.sh"
 fi
@@ -258,7 +258,7 @@ if command -v brew > /dev/null 2>&1; then
   export RUBY_CONFIGURE_OPTS
 fi
 
-export GOPATH="$HOME/code"
-export PATH="$GOPATH/bin:$PATH"
+export GOPATH=$HOME/code
+export PATH=$GOPATH/bin:$PATH
 
-export PATH="$HOME/bin:$PATH"
+export PATH=$HOME/bin:$PATH
