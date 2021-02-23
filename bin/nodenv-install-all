@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for version in $(cat ~/code/src/*/*/*/.node-version | sort | uniq); do
+  nodenv install "${@:---skip-existing}" "$version"
+done

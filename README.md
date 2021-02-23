@@ -15,6 +15,10 @@ $ ./install.sh
 
 ### Manual File Locations
 
+#### `bin`
+
+All files belong in `$HOME/bin` with the same paths.
+
 #### `cargo`
 
 All files belong in `$HOME/.cargo` with the same paths.

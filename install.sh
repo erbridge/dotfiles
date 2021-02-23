@@ -236,6 +236,7 @@ while true; do
 done
 
 make-file-symlinks home "$HOME"
+make-file-symlinks bin "$HOME/bin"
 make-file-symlinks cargo "$HOME/.cargo"
 make-dir-symlink git/hooks "$HOME/.config/git/hooks"
 make-file-symlinks ssh "$HOME/.ssh"

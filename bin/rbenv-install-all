@@ -1,0 +1,5 @@
+#!/bin/bash
+
+for version in $(cat ~/code/src/*/*/*/.ruby-version | sort | uniq); do
+  rbenv install "${@:---skip-existing}" "$version"
+done
