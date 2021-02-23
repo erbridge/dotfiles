@@ -9,7 +9,7 @@
 	<key>BracketedPasteMode</key>
 	<true/>
 	<key>Command</key>
-	<string>/bin/bash</string>
+	<string></string>
 	<key>ConvertDosNewlines</key>
 	<true/>
 	<key>CopyWithStylesByDefault</key>
@@ -51396,6 +51396,10 @@
 	<integer>1</integer>
 	<key>TabsHaveCloseButton</key>
 	<true/>
+	<key>TerminalMargin</key>
+	<integer>10</integer>
+	<key>TerminalVMargin</key>
+	<integer>5</integer>
 	<key>TraditionalVisualBell</key>
 	<true/>
 	<key>UIElementRequiresHotkeys</key>
