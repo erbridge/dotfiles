@@ -29,11 +29,11 @@ fi
 # Homebrew
 #
 
-if command -v /opt/homebrew/bin/brew 2>&1; then
+if command -v /opt/homebrew/bin/brew > /dev/null 2>&1; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-if command -v /usr/local/bin/brew 2>&1; then
+if command -v /usr/local/bin/brew > /dev/null 2>&1; then
   eval "$(/usr/local/bin/brew shellenv)"
 fi
 
