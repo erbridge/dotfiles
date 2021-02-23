@@ -1,8 +1,13 @@
 [alias]
 	amend = commit --amend
+	default = !git checkout $(git default-branch)
+	default-branch = !git remote show origin | awk '/HEAD branch/ {print $NF}'
+	delete-merged = !git branch --merged $(git default-branch) | egrep -v \"^\\*|^  $(git default-branch)$\" | xargs git branch --delete
 	fixup = commit --fixup
 	forcepush = push --force-with-lease
+	new = "!fn() { git fetch && git checkout -b $1 origin/$(git default-branch) }; fn"
 	patch = !git add --intent-to-add $(git rev-parse --show-toplevel) && git add --patch
+	update-branch = !git fetch && git rebase -i origin/$(git default-branch)
 
 [core]
 	attributesFile = ~/.gitattributes
