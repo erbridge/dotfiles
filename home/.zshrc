@@ -102,7 +102,7 @@ if [[ $TERM_PROGRAM != vscode ]] && command -v ssh-agent > /dev/null 2>&1; then
 fi
 
 #
-# Plugins
+# ZSH Plugins
 #
 
 # zsh-syntax-highlighting settings
@@ -150,6 +150,18 @@ if [[ $TERM_PROGRAM != vscode ]] && ! zgen saved; then
   zgen save
 fi
 
+#
+# Prompt
+#
+
+if command -v starship > /dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+
+#
+# Plugins
+#
+
 if command -v nano > /dev/null 2>&1; then
   NANORC_DIR=$HOME/.nano
 
@@ -158,15 +170,15 @@ if command -v nano > /dev/null 2>&1; then
   fi
 fi
 
-if [[ -v ITERM_SESSION_ID ]]; then
-  ITERM_INTEGRATION_PATH=$HOME/.iterm2_shell_integration.zsh
+if [[ -v ITERM_PROFILE ]]; then
+  ITERM2_INTEGRATION_PATH=$HOME/.iterm2_shell_integration.zsh
 
-  if [[ ! -f $ITERM_INTEGRATION_PATH ]]; then
-    curl -L https://iterm2.com/shell_integration/zsh -o "$ITERM_INTEGRATION_PATH"
+  if [[ ! -f $ITERM2_INTEGRATION_PATH ]]; then
+    curl -L https://iterm2.com/shell_integration/zsh -o "$ITERM2_INTEGRATION_PATH"
   fi
 
   # shellcheck source=/dev/null
-  source "$ITERM_INTEGRATION_PATH"
+  source "$ITERM2_INTEGRATION_PATH"
 fi
 
 if command -v direnv > /dev/null 2>&1; then
@@ -202,14 +214,6 @@ fi
 if [[ -f $HOME/.travis/travis.sh ]]; then
   # shellcheck source=/dev/null
   source "$HOME/.travis/travis.sh"
-fi
-
-#
-# Prompt
-#
-
-if command -v starship > /dev/null 2>&1; then
-  eval "$(starship init zsh)"
 fi
 
 #
