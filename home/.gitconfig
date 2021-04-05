@@ -1,12 +1,16 @@
 [alias]
 	amend = commit --amend
 	default = !git checkout $(git default-branch)
+	default-latest = !git default && git pull
 	default-branch = !git remote show origin | awk '/HEAD branch/ {print $NF}'
 	delete-merged = !git branch --merged $(git default-branch) | egrep -v \"^\\*|^  $(git default-branch)$\" | xargs git branch --delete
 	fixup = commit --fixup
+	fixup-now = "!fn() { git fixup $1 && git rebase --interactive $1^; }; fn"
 	forcepush = push --force-with-lease
 	new = "!fn() { git fetch origin && git checkout origin/$(git default-branch) && git checkout -b $1; }; fn"
 	patch = !git add --intent-to-add $(git rev-parse --show-toplevel) && git add --patch
+	standup = !git log --author=$(git config user.name) --since=$([ $(date +%u) = 1 ] && echo '3 days ago' || echo 'yesterday') --branches=* --oneline
+	sup = !git status && echo '--------------------------------------------------------------------------------' && git --no-pager log --oneline $(git default-branch)^..HEAD
 	update-branch = !git fetch origin && git rebase --interactive origin/$(git default-branch)
 
 [core]
