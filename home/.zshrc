@@ -89,7 +89,6 @@ zstyle ':completion::complete:*' use-cache true
 zstyle ':completion::complete:*' cache-path "$ZSH_CACHE_DIR"
 
 autoload -Uz compinit
-compinit
 
 #
 # SSH
@@ -108,45 +107,41 @@ fi
 # shellcheck disable=SC2034
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-# zgen settings
-# shellcheck disable=SC2034
-ZGEN_RESET_ON_CHANGE=$HOME/.zshrc
+# Setup zgenom
+ZGENOM_CLONE_DIR=$HOME/zgenom
+ZGENOM_SCRIPT_PATH=$ZGENOM_CLONE_DIR/zgenom.zsh
 
-# autoupdate-zgen settings
-# shellcheck disable=SC2034
-ZGEN_PLUGIN_UPDATE_DAYS=7
-# shellcheck disable=SC2034
-ZGEN_SYSTEM_UPDATE_DAYS=7
-
-# Setup zgen
-ZGEN_CLONE_DIR=$HOME/zgen
-ZGEN_SCRIPT_PATH=$ZGEN_CLONE_DIR/zgen.zsh
-
-if [[ ! -f $ZGEN_SCRIPT_PATH ]]; then
-  git clone git@github.com:tarjoilija/zgen.git "$ZGEN_CLONE_DIR"
+if [[ ! -f $ZGENOM_SCRIPT_PATH ]]; then
+  git clone git@github.com:jandamm/zgenom.git "$ZGENOM_CLONE_DIR"
 fi
 
 # shellcheck source=/dev/null
-source "$ZGEN_SCRIPT_PATH"
+source "$ZGENOM_SCRIPT_PATH"
 
-if [[ $TERM_PROGRAM != vscode ]] && ! zgen saved; then
+zgenom autoupdate --background
+
+if ! zgenom saved; then
   # oh-my-zsh plugins
-  zgen oh-my-zsh plugins/autojump
-  zgen oh-my-zsh plugins/iterm2
-  zgen oh-my-zsh plugins/sudo
+  zgenom ohmyzsh plugins/autojump
+  zgenom ohmyzsh plugins/iterm2
+  zgenom ohmyzsh plugins/sudo
 
   # zsh-users plugins
-  zgen load zsh-users/zsh-autosuggestions
-  zgen load zsh-users/zsh-completions
-  zgen load zsh-users/zsh-syntax-highlighting # Must be sourced before zsh-history-substring-search
-  zgen load zsh-users/zsh-history-substring-search
+  zgenom load zsh-users/zsh-autosuggestions
+  zgenom load zsh-users/zsh-completions
+  zgenom load zsh-users/zsh-syntax-highlighting # Must be sourced before zsh-history-substring-search
+  zgenom load zsh-users/zsh-history-substring-search
 
   # Other plugins
-  zgen load djui/alias-tips
-  # zgen load RobSis/zsh-completion-generator
-  zgen load unixorn/autoupdate-zgen
+  zgenom load djui/alias-tips
+  zgenom load eventi/noreallyjustfuckingstopalready
 
-  zgen save
+  zgenom compile $HOME/.zshrc
+
+  zgenom save
+
+  rbenv rehash
+  nodenv rehash
 fi
 
 #
