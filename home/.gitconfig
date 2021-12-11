@@ -9,6 +9,7 @@
 	forcepush = push --force-with-lease
 	new = "!fn() { git fetch origin && git checkout origin/$(git default-branch) && git checkout -b $1; }; fn"
 	patch = !git add --intent-to-add $(git rev-parse --show-toplevel) && git add --patch
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 	standup = !git log --author=$(git config user.name) --since=\"$([ $(date +%u) = 1 ] && echo '3 days ago' || echo 'yesterday')\" --branches='*' --oneline
 	sup = !git status && echo '--------------------------------------------------------------------------------' && git --no-pager log --oneline $(git default-branch)^..HEAD
 	update-branch = !git fetch origin && git rebase --interactive origin/$(git default-branch)
