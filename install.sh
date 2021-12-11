@@ -225,12 +225,32 @@ while true; do
   read -rp "Do you want to install packages from dotfiles? [y/N] " INSTALL_PACKAGES
 
   if [ "$INSTALL_PACKAGES" = "y" ] || [ "$INSTALL_PACKAGES" = "Y" ]; then
-    if [[ "$OSTYPE" == "darwin"* ]] && ! command -v brew >/dev/null 2>&1; then
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    fi
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+      if [[ "$(uname -m)" == "arm64" ]] || [[ "$(sysctl -in sysctl.proc_translated)" == "1" ]]; then
+        if ! command -v /opt/homebrew/bin/brew >/dev/null 2>&1; then
+          arch -arm64e /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        fi
 
-    if command -v brew >/dev/null 2>&1; then
-      brew bundle --file="$SCRIPT_PATH/homebrew/Brewfile" --no-lock
+        if ! command -v /usr/local/bin/brew >/dev/null 2>&1; then
+          arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        fi
+
+        eval "$(/usr/local/bin/brew shellenv)"
+        FPATH=$(/usr/local/bin/brew --prefix)/share/zsh/site-functions:$FPATH
+
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        FPATH=$(/opt/homebrew/bin/brew --prefix)/share/zsh/site-functions:$FPATH
+
+        arch -arm64e /opt/homebrew/bin/brew bundle install --file="$SCRIPT_PATH/homebrew/Brewfile" --no-lock --verbose
+        arch -x86_64 /usr/local/bin/brew bundle install --file="$SCRIPT_PATH/homebrew/Brewfile.intel" --no-lock --verbose
+      else
+        if ! command -v brew >/dev/null 2>&1; then
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        fi
+
+        brew bundle install --file="$SCRIPT_PATH/homebrew/Brewfile" --no-lock --verbose
+        brew bundle install --file="$SCRIPT_PATH/homebrew/Brewfile.intel" --no-lock --verbose
+      fi
     fi
 
     break
