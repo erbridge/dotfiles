@@ -29,19 +29,22 @@ fi
 # Homebrew
 #
 
-if command -v /opt/homebrew/bin/brew > /dev/null 2>&1; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+if [[ "$(uname -s)" == "Darwin" ]] && ([[ "$(uname -m)" == "arm64" ]] || [[ "$(sysctl -in sysctl.proc_translated)" == "1" ]]); then
+  if command -v /usr/local/bin/brew >/dev/null 2>&1; then
+    eval "$(/usr/local/bin/brew shellenv)"
+    FPATH=$(/usr/local/bin/brew --prefix)/share/zsh/site-functions:$FPATH
+    alias ibrew='arch -x86_64 /usr/local/bin/brew'
+  fi
 
-if command -v /usr/local/bin/brew > /dev/null 2>&1; then
-  eval "$(/usr/local/bin/brew shellenv)"
-fi
-
-if command -v brew > /dev/null 2>&1; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
-
-  RUBY_CONFIGURE_OPTS=--with-openssl-dir=$(brew --prefix openssl@1.1)
-  export RUBY_CONFIGURE_OPTS
+  if command -v /opt/homebrew/bin/brew >/dev/null 2>&1; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    FPATH=$(/opt/homebrew/bin/brew --prefix)/share/zsh/site-functions:$FPATH
+  fi
+else
+  if command -v brew >/dev/null 2>&1; then
+    eval "$(brew shellenv)"
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  fi
 fi
 
 #
