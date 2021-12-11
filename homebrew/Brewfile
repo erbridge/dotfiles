@@ -60,6 +60,7 @@ brew "redis", restart_service: true
 brew "ruby"
 brew "rustup-init"
 brew "shellcheck"
+brew "shfmt"
 brew "starship"
 brew "tfenv"
 brew "tflint"

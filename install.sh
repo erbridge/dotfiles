@@ -2,17 +2,20 @@
 set -e
 shopt -s dotglob
 
-if ! command -v python > /dev/null 2>&1; then
+if ! command -v python >/dev/null 2>&1; then
   echo "Python is required to run this script. Install it and try again."
   exit 1
 fi
 
-if ! command -v perl > /dev/null 2>&1; then
+if ! command -v perl >/dev/null 2>&1; then
   echo "Perl is required to run this script. Install it and try again."
   exit 1
 fi
 
-SCRIPT_PATH=$(cd "$(dirname "$0")"; pwd -P)
+SCRIPT_PATH=$(
+  cd "$(dirname "$0")"
+  pwd -P
+)
 
 function relpath {
   local path=$1
@@ -22,7 +25,8 @@ function relpath {
 }
 
 function for-each-file-in {
-  local dir=$1; shift
+  local dir=$1
+  shift
 
   for path in "$dir"/*; do
     if ! [ -e "$path" ]; then
@@ -221,12 +225,12 @@ while true; do
   read -rp "Do you want to install packages from dotfiles? [y/N] " INSTALL_PACKAGES
 
   if [ "$INSTALL_PACKAGES" = "y" ] || [ "$INSTALL_PACKAGES" = "Y" ]; then
-    if [[ "$OSTYPE" == "darwin"* ]] && ! command -v brew > /dev/null 2>&1; then
+    if [[ "$OSTYPE" == "darwin"* ]] && ! command -v brew >/dev/null 2>&1; then
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 
-    if command -v brew > /dev/null 2>&1; then
-      brew bundle --file="$SCRIPT_PATH/homebrew/Brewfile"
+    if command -v brew >/dev/null 2>&1; then
+      brew bundle --file="$SCRIPT_PATH/homebrew/Brewfile" --no-lock
     fi
 
     break
@@ -243,13 +247,13 @@ make-file-symlinks ssh "$HOME/.ssh"
 make-file-symlinks ssh/config.d "$HOME/.ssh/config.d"
 make-file-symlinks starship "$HOME/.config"
 
-if command -v code > /dev/null 2>&1; then
+if command -v code >/dev/null 2>&1; then
   while true; do
     INSTALL_PACKAGES=
     read -rp "Do you want to install VSCode extensions from dotfiles? [y/N] " INSTALL_PACKAGES
 
     if [ "$INSTALL_PACKAGES" = "y" ] || [ "$INSTALL_PACKAGES" = "Y" ]; then
-      xargs -n 1 code --install-extension < "$SCRIPT_PATH/vscode/extension-list"
+      xargs -n 1 code --install-extension <"$SCRIPT_PATH/vscode/extension-list"
 
       break
     elif ! [ "$INSTALL_PACKAGES" ] || [ "$INSTALL_PACKAGES" = "n" ] || [ "$INSTALL_PACKAGES" = "N" ]; then
@@ -262,7 +266,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   make-file-symlinks vscode/user "$HOME/Library/Application Support/Code/User"
 fi
 
-if command -v rbenv > /dev/null 2>&1; then
+if command -v rbenv >/dev/null 2>&1; then
   eval "$(rbenv init -)"
 
   make-file-symlinks rbenv "$(rbenv root)"

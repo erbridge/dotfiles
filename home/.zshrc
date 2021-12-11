@@ -94,7 +94,7 @@ autoload -Uz compinit
 # SSH
 #
 
-if [[ $TERM_PROGRAM != vscode ]] && command -v ssh-agent > /dev/null 2>&1; then
+if [[ $TERM_PROGRAM != vscode ]] && command -v ssh-agent >/dev/null 2>&1; then
   eval "$(ssh-agent)"
   ssh-add -A
 fi
@@ -148,7 +148,7 @@ fi
 # Prompt
 #
 
-if command -v starship > /dev/null 2>&1; then
+if command -v starship >/dev/null 2>&1; then
   eval "$(starship init zsh)"
 fi
 
@@ -156,7 +156,7 @@ fi
 # Plugins
 #
 
-if command -v nano > /dev/null 2>&1; then
+if command -v nano >/dev/null 2>&1; then
   NANORC_DIR=$HOME/.nano
 
   if [[ ! -d $NANORC_DIR ]]; then
@@ -175,11 +175,11 @@ if [[ -v ITERM_PROFILE ]]; then
   source "$ITERM2_INTEGRATION_PATH"
 fi
 
-if command -v direnv > /dev/null 2>&1; then
+if command -v direnv >/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
-if command -v rbenv > /dev/null 2>&1; then
+if command -v rbenv >/dev/null 2>&1; then
   eval "$(rbenv init -)"
 
   RBENV_PLUGIN_DIR=$(rbenv root)/plugins
@@ -190,7 +190,7 @@ if command -v rbenv > /dev/null 2>&1; then
   fi
 fi
 
-if command -v nodenv > /dev/null 2>&1; then
+if command -v nodenv >/dev/null 2>&1; then
   eval "$(nodenv init -)"
 
   NODENV_PLUGIN_DIR=$(nodenv root)/plugins
@@ -201,7 +201,7 @@ if command -v nodenv > /dev/null 2>&1; then
   fi
 fi
 
-if command -v goenv > /dev/null 2>&1; then
+if command -v goenv >/dev/null 2>&1; then
   eval "$(goenv init -)"
 fi
 
@@ -229,13 +229,13 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
-if command -v lsd > /dev/null 2>&1; then
+if command -v lsd >/dev/null 2>&1; then
   alias ls='lsd'
 else
   alias ls='ls -G'
 fi
 
-if command -v hub > /dev/null 2>&1; then
+if command -v hub >/dev/null 2>&1; then
   alias git='hub'
 fi
 
