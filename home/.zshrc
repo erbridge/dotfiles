@@ -21,10 +21,6 @@ ZSH_CACHE_DIR=$HOME/.zcache
 
 export EDITOR=nano
 
-if command -v code > /dev/null 2>&1; then
-  export VISUAL=code
-fi
-
 #
 # Homebrew
 #
