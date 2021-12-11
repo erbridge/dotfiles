@@ -77,10 +77,12 @@
   ],
   "explorer.autoReveal": false,
   "explorer.openEditors.visible": 0,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
   "files.associations": {
     "*.js.erb": "javascript",
     "*.sveltemd": "markdown",
-    ".env.defaults": "dotenv"
+    ".env.defaults": "dotenv",
+    "LICENCE": "plaintext"
   },
   "files.defaultLanguage": "${activeEditorLanguage}",
   "files.hotExit": "onExitAndWindowClose",
@@ -105,8 +107,26 @@
   "grammarly.dialect": "british",
   "grammarly.domain": "technical",
   "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.inlayHints.enumMemberValues.enabled": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "jest.autoRun": {
+    "watch": true,
+    "onStartup": ["all-tests"]
+  },
+  "jest.coverageFormatter": "GutterFormatter",
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.opacity": 1,
+  "material-icon-theme.saturation": 0.7,
+  "material-icon-theme.hidesExplorerArrows": true,
+  "material-icon-theme.activeIconPack": "react",
+  "openscad.cheatsheet.displayInStatusBar": "activeDoc",
+  "openscad.interface.showPreviewInContextMenus": false,
+  "openscad.maxInstances": 2,
   "prettier.proseWrap": "always",
   "problems.showCurrentInStatus": true,
+  "python.defaultInterpreterPath": "python3",
+  "python.pythonPath": "python3",
   "ruby.codeCompletion": false,
   "ruby.format": "standard",
   "ruby.intellisense": false,
@@ -139,16 +159,31 @@
   "terminal.integrated.fontFamily": "'Fira Mono for Powerline', 'Fira Mono', monospace",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.inheritEnv": false,
-  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "terminal.integrated.minimumContrastRatio": 5,
   "terraform.languageServer": {
     "external": true,
     "args": ["serve"]
   },
   "testExplorer.addToEditorContextMenu": true,
   "testExplorer.showOnRun": true,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
   "todo-tree.highlights.enabled": true,
-  "todo-tree.tree.showScanModeButton": false,
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "typescript.implementationsCodeLens.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "window.autoDetectColorScheme": true,
   "window.newWindowDimensions": "maximized",
@@ -163,6 +198,7 @@
   "workbench.editor.splitSizing": "split",
   "workbench.editor.wrapTabs": true,
   "workbench.enableExperiments": false,
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.list.keyboardNavigation": "filter",
   "workbench.preferredDarkColorTheme": "Neon Verdigris",
   "workbench.quickOpen.preserveInput": true,
@@ -188,6 +224,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[svelte]": {
