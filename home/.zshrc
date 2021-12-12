@@ -205,6 +205,14 @@ if command -v goenv >/dev/null 2>&1; then
   eval "$(goenv init -)"
 fi
 
+if command -v mcfly >/dev/null 2>&1; then
+  export MCFLY_FUZZY=true
+  export MCFLY_RESULTS=25
+  export MCFLY_INTERFACE_VIEW=BOTTOM
+
+  eval "$(mcfly init zsh)"
+fi
+
 if [[ -f $HOME/.travis/travis.sh ]]; then
   # shellcheck source=/dev/null
   source "$HOME/.travis/travis.sh"
