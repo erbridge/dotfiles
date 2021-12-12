@@ -237,6 +237,21 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
+{
+  update_system_command="brew update && brew upgrade"
+
+  if [[ "$(type ibrew)" == "ibrew is an alias"* ]]; then
+    update_system_command="$update_system_command && ibrew update && ibrew upgrade"
+  fi
+
+  if command -v mas >/dev/null 2>&1; then
+    update_system_command="$update_system_command && mas upgrade"
+
+  fi
+
+  alias update-system=$update_system_command
+}
+
 if command -v lsd >/dev/null 2>&1; then
   alias ls='lsd'
 else
