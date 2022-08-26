@@ -61,6 +61,9 @@ brew "pipenv"
 brew "pngquant"
 brew "poetry"
 brew "postgresql", restart_service: true
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "pyenv-virtualenvwrapper"
 brew "rbenv"
 brew "redis", restart_service: true
 brew "ruby"

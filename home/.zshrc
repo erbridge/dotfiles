@@ -142,6 +142,7 @@ if ! zgenom saved; then
 
   rbenv rehash
   nodenv rehash
+  pyenv rehash
 fi
 
 #
@@ -201,8 +202,12 @@ if command -v nodenv >/dev/null 2>&1; then
   fi
 fi
 
-if command -v goenv >/dev/null 2>&1; then
-  eval "$(goenv init -)"
+if command -v pyenv >/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+
+  if command -v pyenv-virtualenv-init >/dev/null 2>&1; then
+    eval "$(pyenv virtualenv-init -)"
+  fi
 fi
 
 if command -v mcfly >/dev/null 2>&1; then
