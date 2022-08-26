@@ -117,6 +117,9 @@
 	allowed = AKIAIOSFODNN7EXAMPLE
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 
+[sequence]
+	editor = interactive-rebase-tool
+
 [status]
 	branch = true
 	relativePaths = false
