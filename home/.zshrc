@@ -143,6 +143,8 @@ if ! zgenom saved; then
   # Other plugins
   zgenom load djui/alias-tips
   zgenom load eventi/noreallyjustfuckingstopalready
+  # zgenom load RobSis/zsh-completion-generator
+  # zgenom load unixorn/autoupdate-zgenom
 
   zgenom compile $HOME/.zshrc
 
