@@ -282,7 +282,18 @@ function take() {
 }
 
 function configure-monitors() {
-  displayplacer "id:4A329880-4032-7100-DE79-71A95CA6246A res:1440x900 color_depth:8 scaling:on origin:(0,0) degree:0" "id:31C5597E-A2FF-2BE8-7071-DEAC7D418B8E res:1440x2560 hz:60 color_depth:8 scaling:off origin:(1132,-2560) degree:90"
+  if command -v scutil >/dev/null 2>&1; then
+    COMPUTER_NAME=$(scutil --get ComputerName)
+
+    case $COMPUTER_NAME in
+    bread)
+      displayplacer "id:4A329880-4032-7100-DE79-71A95CA6246A res:1440x900 color_depth:8 scaling:on origin:(0,0) degree:0" "id:31C5597E-A2FF-2BE8-7071-DEAC7D418B8E res:1440x2560 hz:60 color_depth:8 scaling:off origin:(1132,-2560) degree:90"
+      ;;
+    sourdough)
+      displayplacer "id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1680x1050 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0" "id:FF7A1541-B6B9-EDFC-0857-D6964E3302DB res:1080x1920 hz:60 color_depth:8 scaling:off origin:(1410,-1920) degree:90"
+      ;;
+    esac
+  fi
 }
 
 #
