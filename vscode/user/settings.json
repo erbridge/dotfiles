@@ -1,5 +1,5 @@
 {
-  "alex.enable": true,
+  "apple-swift-format.path": "/opt/homebrew/bin/swift-format",
   "breadcrumbs.enabled": true,
   "cSpell.enabledLanguageIds": [
     "asciidoc",
@@ -93,19 +93,6 @@
   "gdscript_formatter.line_size": 80,
   "gitlens.advanced.fileHistoryFollowsRenames": true,
   "gitlens.codeLens.enabled": false,
-  "grammarly.userWords": [
-    "bootcamps",
-    "dxw",
-    "open source",
-    "orgs",
-    "surprizingly",
-    "unsurprizingly",
-    "weeknote",
-    "weeknotes"
-  ],
-  "grammarly.audience": "general",
-  "grammarly.dialect": "british",
-  "grammarly.domain": "technical",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.inlayHints.enumMemberValues.enabled": true,
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
@@ -115,6 +102,7 @@
     "onStartup": ["all-tests"]
   },
   "jest.coverageFormatter": "GutterFormatter",
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.opacity": 1,
   "material-icon-theme.saturation": 0.7,
@@ -126,7 +114,7 @@
   "prettier.proseWrap": "always",
   "problems.showCurrentInStatus": true,
   "python.defaultInterpreterPath": "python3",
-  "python.pythonPath": "python3",
+  "redhat.telemetry.enabled": false,
   "ruby.codeCompletion": false,
   "ruby.format": "standard",
   "ruby.intellisense": false,
@@ -150,6 +138,8 @@
   "shellcheck.enableQuickFix": true,
   "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
   "shellcheck.useWorkspaceRootAsCwd": true,
+  "svelte.plugin.svelte.note-new-transformation": false,
+  "svelte.enable-ts-plugin": true,
   "tabnine.experimentalAutoImports": true,
   "task.saveBeforeRun": "prompt",
   "terminal.explorerKind": "external",
@@ -160,10 +150,6 @@
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.minimumContrastRatio": 5,
-  "terraform.languageServer": {
-    "external": true,
-    "args": ["serve"]
-  },
   "testExplorer.addToEditorContextMenu": true,
   "testExplorer.showOnRun": true,
   "todo-tree.general.tags": [
@@ -211,6 +197,12 @@
   "[arm-template]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -248,4 +240,8 @@
   "workbench.activityBar.visible": false,
   "workbench.sideBar.location": "right",
   "workbench.statusBar.visible": true
+
+  /**
+   * Unsorted new config
+   */
 }
