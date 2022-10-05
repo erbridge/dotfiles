@@ -43,6 +43,14 @@ else
   fi
 fi
 
+# if command -v brew >/dev/null 2>&1; then
+#   export LDFLAGS=-L$(brew --prefix)/opt/libffi/lib $LDFLAGS
+#   export CPPFLAGS=-I$(brew --prefix)/opt/libffi/include $CPPFLAGS
+#   export PKG_CONFIG_PATH=$(brew --prefix)/opt/libffi/lib/pkgconfig:$PKG_CONFIG_PATH
+# fi
+
+export RUBY_CFLAGS=-DUSE_FFI_CLOSURE_ALLOC
+
 #
 # ZSH
 #
