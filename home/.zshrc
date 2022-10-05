@@ -96,7 +96,7 @@ autoload -Uz compinit
 
 if [[ $TERM_PROGRAM != vscode ]] && command -v ssh-agent >/dev/null 2>&1; then
   eval "$(ssh-agent)"
-  ssh-add -A
+  ssh-add --apple-load-keychain
 fi
 
 #
