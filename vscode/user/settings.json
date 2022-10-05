@@ -148,7 +148,7 @@
   "search.useGlobalIgnoreFiles": true,
   "shellcheck.customArgs": ["-x"],
   "shellcheck.enableQuickFix": true,
-  "shellcheck.executablePath": "/usr/local/bin/shellcheck",
+  "shellcheck.executablePath": "/opt/homebrew/bin/shellcheck",
   "shellcheck.useWorkspaceRootAsCwd": true,
   "tabnine.experimentalAutoImports": true,
   "task.saveBeforeRun": "prompt",
