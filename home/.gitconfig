@@ -18,7 +18,6 @@
 	attributesFile = ~/.gitattributes
 	editor = nano -r 72
 	excludesFile = ~/.gitignore
-	hooksPath = ~/.config/git/hooks
 
 [commit]
 	verbose = true
