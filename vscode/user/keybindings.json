@@ -18,14 +18,14 @@
    * Sidebar
    */
   // Side[b]ar
-  {
-    "key": "cmd+b",
-    "command": "-workbench.action.toggleSidebarVisibility"
-  },
-  {
-    "key": "cmd+k cmd+b",
-    "command": "workbench.action.toggleSidebarVisibility"
-  },
+  // {
+  //   "key": "cmd+b",
+  //   "command": "-workbench.action.toggleSidebarVisibility"
+  // },
+  // {
+  //   "key": "cmd+k cmd+b",
+  //   "command": "workbench.action.toggleSidebarVisibility"
+  // },
 
   // De[b]ug
   {
@@ -38,6 +38,17 @@
     "when": "activeViewlet == 'workbench.view.debug'"
   },
 
+  // [T]est
+  {
+    "key": "cmd+k cmd+t",
+    "command": "test-explorer.focus"
+  },
+  // {
+  //   "key": "cmd+k cmd+t",
+  //   "command": "workbench.action.toggleSidebarVisibility",
+  //   "when": "activeViewlet == 'workbench.view.explorer-test'"
+  // },
+
   // [E]xplorer
   {
     "key": "cmd+k cmd+e",
@@ -47,17 +58,6 @@
     "key": "cmd+k cmd+e",
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "activeViewlet == 'workbench.view.explorer'"
-  },
-
-  // [T]est Explorer
-  {
-    "key": "cmd+k cmd+t",
-    "command": "test-explorer.focus"
-  },
-  {
-    "key": "cmd+k cmd+t",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "testExplorerVisible"
   },
 
   // E[x]tensions
