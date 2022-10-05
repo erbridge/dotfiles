@@ -44,8 +44,8 @@ style = "yellow"
 threshold = 90
 style = "green"
 
-[character]
-use_symbol_for_status = true
+# [character]
+# use_symbol_for_status = true
 
 [cmd_duration]
 format = "[  took $duration  ](bold black bg:yellow)\n"
@@ -95,7 +95,8 @@ style = "bold yellow"
 format = "[$hostname//]($style)"
 
 [jobs]
-threshold = 0
+number_threshold = 1
+symbol_threshold = 1
 format = "[+](bold blue)[$number](dimmed) "
 
 [memory_usage]
