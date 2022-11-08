@@ -321,3 +321,5 @@ export GOPATH=$HOME/code
 export PATH=$GOPATH/bin:$PATH
 
 export PATH=$HOME/bin:$PATH
+
+export GPG_TTY=$(tty)
