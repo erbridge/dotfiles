@@ -23,12 +23,6 @@ All files belong in `$HOME/bin` with the same paths.
 
 All files belong in `$HOME/.cargo` with the same paths.
 
-#### `git`
-
-##### `hooks`
-
-All files belong in `$HOME/.config/git/hooks` with the same names.
-
 #### `home`
 
 All files and directories belong in `$HOME` with the same paths.
