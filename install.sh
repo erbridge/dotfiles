@@ -14,7 +14,7 @@ fi
 
 SCRIPT_PATH=$(
   cd "$(dirname "$0")"
-  pwd -P
+  pwd -L
 )
 
 function relpath {

@@ -3,7 +3,7 @@ set -e
 
 SCRIPT_PATH=$(
   cd "$(dirname "$0")"
-  pwd -P
+  pwd -L
 )
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
