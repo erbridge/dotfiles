@@ -195,9 +195,14 @@ if command -v rbenv >/dev/null 2>&1; then
 
   RBENV_PLUGIN_DIR=$(rbenv root)/plugins
   RBENV_DEFAULT_GEMS_DIR=$RBENV_PLUGIN_DIR/rbenv-default-gems
+  RBENV_GEMSET_DIR=$RBENV_PLUGIN_DIR/rbenv-gemset
 
   if [[ ! -d $RBENV_DEFAULT_GEMS_DIR ]]; then
     git clone git@github.com:rbenv/rbenv-default-gems.git "$RBENV_DEFAULT_GEMS_DIR"
+  fi
+
+  if [[ ! -d $RBENV_GEMSET_DIR ]]; then
+    git clone git@github.com:jf/rbenv-gemset.git "$RBENV_GEMSET_DIR"
   fi
 fi
 
