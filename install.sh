@@ -259,7 +259,7 @@ if command -v code >/dev/null 2>&1; then
   done
 fi
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
   make-file-symlinks vscode/user "$HOME/Library/Application Support/Code/User"
 fi
 
