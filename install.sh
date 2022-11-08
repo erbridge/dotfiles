@@ -292,14 +292,14 @@ if command -v rbenv >/dev/null 2>&1; then
   make-file-symlinks rbenv "$(rbenv root)"
 fi
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Now set up Alfred and iTerm and you're done!"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  echo "Now set up Raycast and iTerm and you're done!"
   echo
-  echo "Alfred's settings are here:"
-  echo "  $SCRIPT_PATH/alfred"
+  echo "Raycast's settings are here:"
+  echo "  $SCRIPT_PATH/raycast"
   echo
-  echo "Follow the instructions here:"
-  echo "  https://www.alfredapp.com/help/advanced/sync/"
+  echo "In Raycast:"
+  echo "  Import Preferences & Data"
   echo
   echo "iTerm's preferences are here:"
   echo "  $SCRIPT_PATH/iterm"

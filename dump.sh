@@ -27,4 +27,14 @@ if command -v code >/dev/null 2>&1; then
   code --list-extensions >"$SCRIPT_PATH/vscode/extension-list"
 fi
 
-echo "Done!"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  echo "Now dump Raycast and you're done!"
+  echo
+  echo "Raycast's settings belong here:"
+  echo "  $SCRIPT_PATH/raycast"
+  echo
+  echo "In Raycast:"
+  echo "  Export Preferences & Data"
+else
+  echo "Done!"
+fi
