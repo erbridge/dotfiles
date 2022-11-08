@@ -2,11 +2,6 @@
 set -e
 shopt -s dotglob
 
-if ! command -v python >/dev/null 2>&1; then
-  echo "Python is required to run this script. Install it and try again."
-  exit 1
-fi
-
 if ! command -v perl >/dev/null 2>&1; then
   echo "Perl is required to run this script. Install it and try again."
   exit 1
