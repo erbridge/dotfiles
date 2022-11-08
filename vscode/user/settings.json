@@ -1,5 +1,4 @@
 {
-  "apple-swift-format.path": "/opt/homebrew/bin/swift-format",
   "breadcrumbs.enabled": true,
   "cSpell.enabledLanguageIds": [
     "asciidoc",
@@ -90,7 +89,6 @@
   "files.simpleDialog.enable": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "gdscript_formatter.line_size": 80,
   "gitlens.advanced.fileHistoryFollowsRenames": true,
   "gitlens.codeLens.enabled": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -102,7 +100,6 @@
     "onStartup": ["all-tests"]
   },
   "jest.coverageFormatter": "GutterFormatter",
-  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
   "material-icon-theme.folders.theme": "classic",
   "material-icon-theme.opacity": 1,
   "material-icon-theme.saturation": 0.7,
@@ -126,7 +123,6 @@
   "ruby.lintDebounceTime": 1500,
   "ruby.useBundler": true,
   "ruby.useLanguageServer": true,
-  "rust.clippy_preference": "on",
   "scm.inputFontFamily": "editor",
   "search.searchEditor.doubleClickBehaviour": "openLocationToSide",
   "search.searchEditor.reusePriorSearchConfiguration": true,
