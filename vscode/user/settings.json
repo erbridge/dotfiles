@@ -126,7 +126,6 @@
   "ruby.lintDebounceTime": 1500,
   "ruby.useBundler": true,
   "ruby.useLanguageServer": true,
-  "rust-client.rustupPath": "~/.cargo/bin/rustup",
   "rust.clippy_preference": "on",
   "scm.inputFontFamily": "editor",
   "search.searchEditor.doubleClickBehaviour": "openLocationToSide",
