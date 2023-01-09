@@ -239,6 +239,7 @@ done
 
 make-file-symlinks home "$HOME"
 make-file-symlinks bin "$HOME/bin"
+make-file-symlinks bundle "$HOME/.bundle"
 make-file-symlinks cargo "$HOME/.cargo"
 make-file-symlinks ssh "$HOME/.ssh"
 make-file-symlinks ssh/config.d "$HOME/.ssh/config.d"
