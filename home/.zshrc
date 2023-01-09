@@ -150,9 +150,17 @@ if ! zgenom saved; then
 
   zgenom save
 
-  rbenv rehash
-  nodenv rehash
-  pyenv rehash
+  if command -v rbenv >/dev/null 2>&1; then
+    rbenv rehash
+  fi
+
+  if command -v nodenv >/dev/null 2>&1; then
+    nodenv rehash
+  fi
+
+  if command -v pyenv >/dev/null 2>&1; then
+    pyenv rehash
+  fi
 fi
 
 #
