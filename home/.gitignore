@@ -1,4 +1,6 @@
 .DS_Store
 .envrc
+__pycache__/
 .vscode/
 vendor/bundle/
+.zed/

@@ -47,7 +47,7 @@
 	"editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll"],
 	"editor.copyWithSyntaxHighlighting": false,
 	"editor.cursorBlinking": "smooth",
-	"editor.cursorSmoothCaretAnimation": true,
+	"editor.cursorSmoothCaretAnimation": "on",
 	"editor.cursorSurroundingLines": 3,
 	"editor.dragAndDrop": false,
 	"editor.fontFamily": "'Fira Mono', monospace",
@@ -110,7 +110,6 @@
 	"prettier.proseWrap": "always",
 	"prettier.useTabs": true,
 	"problems.showCurrentInStatus": true,
-	"python.defaultInterpreterPath": "python3",
 	"redhat.telemetry.enabled": false,
 	"ruby.codeCompletion": false,
 	"ruby.format": "standard",
@@ -164,7 +163,7 @@
 	"typescript.inlayHints.parameterNames.enabled": "all",
 	"typescript.inlayHints.parameterTypes.enabled": true,
 	"typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-	"typescript.inlayHints.variableTypes.enabled": true,
+	// "typescript.inlayHints.variableTypes.enabled": true,
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"window.autoDetectColorScheme": true,
 	"window.newWindowDimensions": "maximized",
@@ -179,7 +178,7 @@
 	"workbench.editor.splitSizing": "split",
 	"workbench.editor.wrapTabs": true,
 	"workbench.enableExperiments": false,
-	"workbench.iconTheme": "material-icon-theme",
+	"workbench.iconTheme": null,
 	"workbench.list.defaultFindMode": "filter",
 	"workbench.preferredDarkColorTheme": "Neon Verdigris",
 	"workbench.quickOpen.preserveInput": true,
@@ -228,15 +227,26 @@
 	"[typescriptreact]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-
-	/**
-	 * Cleaner UI
-	 */
-	"workbench.activityBar.visible": false,
 	"workbench.sideBar.location": "right",
-	"workbench.statusBar.visible": true
-
+	"workbench.statusBar.visible": true,
 	/**
 	 * Unsorted new config
 	 */
+	// "[python]": {
+	// 	"editor.formatOnType": true
+	// },
+	"[dockercompose]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"go.toolsManagement.autoUpdate": true,
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.autoFormatStrings": true,
+	"python.analysis.typeCheckingMode": "basic",
+	"workbench.activityBar.location": "hidden",
+	"pylint.importStrategy": "fromEnvironment",
+	"workbench.editor.splitInGroupLayout": "vertical",
+	"[mdx]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"gitlens.launchpad.indicator.enabled": false
 }

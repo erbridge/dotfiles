@@ -1,0 +1,92 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "buffer_font_size": 15.0,
+  "auto_install_extensions": {},
+  "base_keymap": "VSCode",
+  "buffer_font_features": {
+    "calt": false
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.pyright": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ],
+      "auto_indent_on_paste": false
+    },
+    "TSX": {
+      "language_servers": ["!typescript-language-server", "vtsls", "biome"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.removeUnusedImports": true,
+            "source.organizeImports.biome": true,
+            "source.fixAll.biome": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "biome"
+          }
+        }
+      ],
+      "prettier": {
+        "allowed": false
+      }
+    },
+    "TypeScript": {
+      "language_servers": ["!typescript-language-server", "vtsls", "biome"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.removeUnusedImports": true,
+            "source.organizeImports.biome": true,
+            "source.fixAll.biome": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "biome"
+          }
+        }
+      ],
+      "prettier": {
+        "allowed": false
+      }
+    }
+  },
+  // "multi_cursor_modifier": "cmd_or_ctrl",
+  "project_panel": {
+    "auto_reveal_entries": false,
+    "dock": "right"
+  },
+  "show_signature_help_after_edits": true,
+  "show_whitespaces": "boundary",
+  "soft_wrap": "editor_width",
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Asteroid"
+  }
+}

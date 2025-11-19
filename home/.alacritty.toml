@@ -1,0 +1,89 @@
+[window]
+dimensions = { columns = 80, lines = 64 }
+padding = { x = 10, y = 15 }
+dynamic_padding = true
+decorations = "none"
+resize_increments = true
+
+[scrolling]
+history = 100000
+
+[font]
+normal = { family = "FiraCode Nerd Font Mono", style = "Regular" }
+size = 13
+
+# Nord: https://github.com/nordtheme/alacritty/blob/main/src/nord.yaml
+# Copyright (c) 2016-2024 Sven Greb <development@svengreb.de>
+# This source code is licensed under the MIT license found in the license file.
+[colors]
+
+[colors.primary]
+background = "#2e3440"
+foreground = "#d8dee9"
+dim_foreground = "#a5abb6"
+
+[colors.cursor]
+text = "#2e3440"
+cursor = "#d8dee9"
+
+[colors.vi_mode_cursor]
+text = "#2e3440"
+cursor = "#d8dee9"
+
+[colors.selection]
+text = "CellForeground"
+background = "#4c566a"
+
+[colors.search]
+matches = { foreground = "CellBackground", background = "#88c0d0" }
+
+[colors.normal]
+black = "#3b4252"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#88c0d0"
+white = "#e5e9f0"
+
+[colors.bright]
+black = "#4c566a"
+red = "#bf616a"
+green = "#a3be8c"
+yellow = "#ebcb8b"
+blue = "#81a1c1"
+magenta = "#b48ead"
+cyan = "#8fbcbb"
+white = "#eceff4"
+
+[colors.dim]
+black = "#373e4d"
+red = "#94545d"
+green = "#809575"
+yellow = "#b29e75"
+blue = "#68809a"
+magenta = "#8c738c"
+cyan = "#6d96a5"
+white = "#aeb3bb"
+
+[bell]
+duration = 250
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "beam" }
+thickness = 0.2
+
+# [hints]
+
+# [[hints.enabled]]
+# command = "open"
+# hyperlinks = true
+# post_processing = true
+# persist = false
+# mouse = { mods = "Option", enabled = true }
+# binding = { key = "U", mods = "Control|Shift" }
+# regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"

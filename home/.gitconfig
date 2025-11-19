@@ -3,7 +3,10 @@
 	default = !git checkout $(git default-branch)
 	default-latest = !git default && git pull
 	default-branch = !git remote show origin | awk '/HEAD branch/ {print $NF}'
-	delete-merged = !git branch --merged $(git default-branch) | egrep -v \"^\\*|^  $(git default-branch)$\" | xargs git branch --delete
+	delete-merged = !echo DRY RUN: taking no action... && git branch --merged $(git default-branch) | egrep -v \"^\\*|^  $(git default-branch)$\"
+	delete-merged-force = !git branch --merged $(git default-branch) | egrep -v \"^\\*|^  $(git default-branch)$\" | xargs -r git branch --delete
+	delete-gone = !echo DRY RUN: taking no action... && git branch -vv | grep ': gone' | awk '{print $1}' | egrep -v \"^\\*|^  $(git default-branch)$\"
+	delete-gone-force = !git branch -vv | grep ': gone' | awk '{print $1}' | egrep -v \"^\\*|^  $(git default-branch)$\" | xargs -r git branch --delete --force
 	fixup = commit --fixup
 	fixup-now = "!fn() { git fixup $1 && git rebase --interactive $1^; }; fn"
 	forcepush = push --force-with-lease
@@ -13,6 +16,9 @@
 	standup = !git log --author=$(git config user.name) --since=\"$([ $(date +%u) = 1 ] && echo '3 days ago' || echo 'yesterday')\" --branches='*' --oneline
 	sup = !git status && echo '--------------------------------------------------------------------------------' && git --no-pager log --oneline $(git default-branch)^..HEAD
 	update-branch = !git fetch origin && git rebase --interactive origin/$(git default-branch)
+
+[branch]
+	sort = -committerdate
 
 [core]
 	attributesFile = ~/.gitattributes
@@ -80,6 +86,9 @@
 [log]
 	abbrevCommit = true
 	diffFilter = delta --color-only
+
+[merge]
+	conflictStyle = diff3
 
 [merge "npm-merge-driver"]
 	name = automatically merge npm lockfiles

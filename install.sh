@@ -215,17 +215,19 @@ function make-file-symlinks {
   echo
 }
 
+softwareupdate --install-rosetta --agree-to-license
+
 while true; do
   INSTALL_PACKAGES=
   read -rp "Do you want to install packages from dotfiles? [y/N] " INSTALL_PACKAGES
 
   if [ "$INSTALL_PACKAGES" = "y" ] || [ "$INSTALL_PACKAGES" = "Y" ]; then
     if [[ "$(uname -s)" == "Darwin" ]]; then
-      if ! command -v brew >/dev/null 2>&1; then
+      if ! command -v /opt/homebrew/bin/brew >/dev/null 2>&1; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       fi
 
-      eval "$(brew shellenv)"
+      eval "$(/opt/homebrew/bin/brew shellenv)"
       FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
       brew bundle install --file="$SCRIPT_PATH/homebrew/Brewfile" --no-lock --verbose

@@ -233,6 +233,10 @@ if command -v pyenv >/dev/null 2>&1; then
   fi
 fi
 
+if command -v goenv >/dev/null 2>&1; then
+  eval "$(goenv init -)"
+fi
+
 if command -v mcfly >/dev/null 2>&1; then
   export MCFLY_FUZZY=true
   export MCFLY_RESULTS=25
@@ -244,6 +248,19 @@ fi
 if [[ -f $HOME/.travis/travis.sh ]]; then
   # shellcheck source=/dev/null
   source "$HOME/.travis/travis.sh"
+fi
+
+if [[ -d $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk ]]; then
+  source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+  source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+fi
+
+if command -v fzf >/dev/null 2>&1; then
+  source <(fzf --zsh)
+fi
+
+if command -v kubectl >/dev/null 2>&1; then
+  source <(kubectl completion zsh)
 fi
 
 #
@@ -325,8 +342,8 @@ bindkey '^[[B' history-substring-search-down
 # Finishing Touches
 #
 
-export GOPATH=$HOME/code
-export PATH=$GOPATH/bin:$PATH
+export GOPATH=$HOME/Code
+export PATH=$PATH:$GOPATH/bin
 
 export PATH=$HOME/bin:$PATH
 
